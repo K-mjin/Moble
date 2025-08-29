@@ -1,15 +1,16 @@
 #include <stdio.h>
-#include <limits.h>
+#define SEC_PER_MIN 60	// 1분은 60초
 
 int main() {
-	short s_money = SHRT_MAX;
-	unsigned short u_money = USHRT_MAX;
+	int input, minute, second;
 
-	s_money = s_money + 1;
-	printf("s_money = %d\n", s_money);
+	printf("초를 입력하시오: ");
+	scanf("%d", &input);		// 초단위의 시간을 읽는다.
 
-	u_money = u_money + 1;
-	printf("u_money = %d", u_money);
+	minute = input / SEC_PER_MIN;	// 몇 분
+	second  = input % SEC_PER_MIN;	// 몇 초
+
+	printf("%d초는 %d분 %d초 입니다. \n", input, minute, second);
 
 	return 0;
 }

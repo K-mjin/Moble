@@ -1,9 +1,15 @@
 #include <stdio.h>
 
 int main() {
-	char code1 = 'A';
-	char code2 = 65;
+	int x, y;
 
-	printf("code1 = %c \n", code1+32);
-	printf("code2 = %c \n", code2+1);
+	printf("두개의 정수를 입력하시오; ");
+	scanf("%d %d", &x, &y);
+
+	printf("x == y의 결과값: %d \n", x == y);
+	printf("x != y의 결과값: %d \n", x != y);
+	printf("x > y의 결과값: %d \n", x > y);
+	printf("x < y의 결과값: %d \n", x < y);
+	printf("x >= y의 결과값: %d \n", x >= y);
+	printf("x <= y의 결과값: %d \n", x <= y);
 }

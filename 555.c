@@ -1,19 +1,24 @@
-/* 2의 보수 프로그램 */
 #include <stdio.h>
 
 int main() {
 	int x = 3;
-	int y = -3;
+	int y;
+	int a = 3;
+	int b;
 
-	printf("x = %08X \n", x);			// 8자리의 16진수로 출력한다.
-	printf("y = %08X \n", y);			// 8자리의 16진수로 출력한다.
-	printf("x + y = %08X \n\n", x + y);	// 8자리의 16진수로 출력한다.
+	y = x++;
+	printf("x++ : %d \n", x);
+	printf("y = x++ : %d \n", y);
 
-	printf("%f \n", 0.123456789);
-	printf("%e \n\n", 0.123456789);
+	y = ++x;
+	printf("++x : %d \n", x);
+	printf("y = ++x : %d \n", y);
 
-	float z = 1e39;
-	printf("z = %e \n", z);
+	y = ++x + x++;
+	printf("%d \n", x);
+	printf("%d \n", y);
 
-	return 0;
+	b = (1 + a++) + 10;
+	printf("%d \n", a);
+	printf("%d \n", y);
 }

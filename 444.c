@@ -1,17 +1,18 @@
+/* 증감연산사를 이용한 프로그램 */
 #include <stdio.h>
-#define TAX_RATE 0.2				// 기호 상수
 
 int main() {
-	const int MONTHS = 12;			// 기호 상수
-	int m_salary, y_salary;			// 변수 선언
+	int x = 10;
 
-	printf("월급을 입력하시오: ");	// 입력 안내문
-	scanf("%d", &m_salary);
+	printf("수식 x++ 의 값: %d \n", x++);
+	printf("수식 x 의 값: %d \n", x);
+	printf("수식 ++x 의 값: %d \n", ++x);
+	printf("수식 x 의 값: %d \n", x);
 
-	y_salary = MONTHS * m_salary;	// 순수입 계산
-
-	printf("연봉은 %d입니다.", y_salary);
-	printf("세금은 %f입니다.", y_salary * TAX_RATE);
+	printf("수식 x-- 의 값: %d \n", x--);
+	printf("수식 x 의 값: %d \n", x);
+	printf("수식 --x 의 값: %d \n", --x);
+	printf("수식 x 의 값: %d \n", x);
 
 	return 0;
 }

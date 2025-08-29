@@ -1,14 +1,22 @@
-#include "basic.h"
+#include <stdio.h>
 
 int main() {
-	int x;
-	printf("변수 x의 크기:%d\n", sizeof(x));
-	printf("char형의 크기:% d\n", sizeof(char));
-	printf("int형의 크기:%d\n", sizeof(int));
-	printf("short형의 크기:%d\n", sizeof(short));
-	printf("long형의 크기:%d\n", sizeof(long));
-	printf("long long형의 크기:%d\n", sizeof(long long));
-	printf("float형의 크기:%d\n", sizeof(float));
-	printf("double형의 크기:%d\n", sizeof(double));
-	printf("long double의 크기: %d\n", sizeof(long double));
+	float x, y, result;
+
+	printf("두개의 정수를 입력하시오: ");
+	scanf("%f %f", &x, &y);
+
+	result = x + y;		// 덧셈
+	printf("%f + %f = %f \n", x, y, result);
+
+	result = x - y;		// 뺄셈
+	printf("%f - %f = % f \n", x, y, result);
+	result = x * y;		// 곱셈
+	printf("%f * %f = % f \n", x, y, result);
+	result = x / y;		// 나눗셈
+	printf("%f / %f = % f \n", x, y, result);
+	result = x % y;		// 나머지 % 연산자는 정수형에서만 사용
+	printf("%f % %f = % f \n", x, y, result);
+
+	return 0;
 }
