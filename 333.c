@@ -1,32 +1,16 @@
 #include <stdio.h>
 
 int main() {
-	int user, change = 0;
-	int price, c5000, c1000, c500, c100;
+	int number;
 
-	printf("물건 값을 입력하시오: ");
-	scanf("%d", &price);	// 물건 값을 입력받는다.
-	printf("사용자가 낸 돈: ");
-	scanf("%d", &user);
-	change = price - user;
+	printf("정수를 입력하시오: ");
+	scanf("%d", &number);
 
-	c5000 = change / 5000;
-	change = change % 5000;
+	if (number % 2 == 0)
+		printf("입력된 정수는 짝수입니다.\n");
 
-	c1000 = change / 1000;
-	change = change % 1000;
-
-	c500 = change / 500;
-	change = change % 500;
-
-	c100 = change / 100;
-	change = change % 100;
-
-	printf("오천원권 : %d장 \n", c5000);
-	printf("천원권 : %d장 \n", c1000);
-	printf("오백원동전 : %d장 \n", c500);
-	printf("백원동전 : %d장 \n", c100);
+	else
+		printf("입력된 정수는 홀수 입니다. \n");
 
 	return 0;
-
 }

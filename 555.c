@@ -1,24 +1,16 @@
+// 윤년 판단 프로그램
 #include <stdio.h>
 
 int main() {
-	int x = 3;
-	int y;
-	int a = 3;
-	int b;
+	int year;
 
-	y = x++;
-	printf("x++ : %d \n", x);
-	printf("y = x++ : %d \n", y);
+	printf("연도를 입력하시오: ");
+	scanf("%d", &year);
 
-	y = ++x;
-	printf("++x : %d \n", x);
-	printf("y = ++x : %d \n", y);
+	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+		printf("%d년은 윤년입니다. \n", year);
+	else
+		printf("%d년은 윤년이 아닙니다.\n", year);
 
-	y = ++x + x++;
-	printf("%d \n", x);
-	printf("%d \n", y);
-
-	b = (1 + a++) + 10;
-	printf("%d \n", a);
-	printf("%d \n", y);
+	return 0;
 }

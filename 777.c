@@ -1,15 +1,19 @@
 #include <stdio.h>
 
 int main() {
-	int x, y;
+	char ch;
 
-	printf("두개의 정수를 입력하시오; ");
-	scanf("%d %d", &x, &y);
+	printf("문자를 입력하시오:");
+	scanf("%c", &ch);
 
-	printf("x == y의 결과값: %d \n", x == y);
-	printf("x != y의 결과값: %d \n", x != y);
-	printf("x > y의 결과값: %d \n", x > y);
-	printf("x < y의 결과값: %d \n", x < y);
-	printf("x >= y의 결과값: %d \n", x >= y);
-	printf("x <= y의 결과값: %d \n", x <= y);
+	if (ch >= 'A' && ch <= 'Z')
+		printf("%c는 대문자입니다.\n", ch);
+	else if (ch >= 'a' && ch <= 'z')
+		printf("%c는 소문자입니다.\n", ch);
+	else if (ch >= '0' && ch <= '9')
+		printf("%c는 숫잡입니다.\n", ch);
+	else
+		printf("%c는 기타문자입니다.\n", ch);
+
+	return 0;
 }

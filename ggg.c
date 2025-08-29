@@ -1,15 +1,32 @@
+//while 문을 이용한 성적의 평균 구하기 프로그램
 #include <stdio.h>
 
 int main() {
-	double f_temp;
-	double c_temp;
+	int grade, n;
+	float sum, average;
 
-	printf("화씨온도를 입력하시오: ");
-	scanf("%lf", &f_temp);
+	// 필요한 변수들을 초기화한다.
+	n = 0;
+	sum = 0;
+	grade = 0;
 
-	c_temp = 5.0 / 9.0 * (f_temp - 32);
+	printf("종료시 음수 입력\n");
 
-	printf("섭씨온도는 %.2lf입니다.", c_temp);
+	// 성적을 입력받아서 합계를 구하고 학생 수를 센다.
+	while (grade >= 0) {
+		printf("성적을 입력하시오: ");
+		scanf("%d", &grade);
+
+		sum += grade;
+		n++;
+	}
+
+	sum = sum - grade;	// 마지막 데이터를 제거한다.
+	n--;				// 마지막 데이터를 제거한다.
+	
+	// 평균을 계산하고 화면에 출력한다.
+	average = sum / n;
+	printf("성적의 평균은 %f입니다.\n", average);
 
 	return 0;
 }

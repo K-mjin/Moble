@@ -1,10 +1,17 @@
+//while 문을 이용한 구구단 출력 프로그램
 #include <stdio.h>
 
 int main() {
-	printf("AND : %08X\n", 0x9 & 0xA);
-	printf("OR : %08X\n", 0x9 | 0xA);
-	printf("XOR : %08X\n", 0x9 ^ 0xA);
-	printf("NOT : %08X\n", ~0x9);
-	printf("<< : %08X\n", 0x4 << 1);
-	printf(">> : %08X\n", 0x4 >> 1);
+	int n;
+	int i = 1;
+
+	printf("출력하고 싶은 단: ");
+	scanf("%d", &n);
+
+	while (i <= 9) {
+		printf("%d * %d = %d \n", n, i, n * i);
+		i++;
+	}
+
+	return 0;
 }

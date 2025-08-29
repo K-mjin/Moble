@@ -1,18 +1,19 @@
-/* 두 정수를 입력받아 앞의 정수가 크면 앞의 수에서
-뒤에 수를 빼고, 뒤의 정수가 크거나 같으면 더하는
-프로그램을 작성 */
+/* 사용자로부터 문자를 하나 입력받아 모음인지 자음인지 
+구분하는 코드를 작성하시오. 단 switch문을 사용한다. */
 #include <stdio.h>
-
 int main() {
-	int a, b, x;
+	int text;
+	
+	printf("문자를 쓰시오.");
+	scanf("%d", &text);
 
-	printf("두개의 정수를 입력하십시오: ");
-	scanf("%d %d", &a, &b);
+	switch (text) {
+	case 'a':
+	case 'i':
+	case e:
+	case o:
+	case u:
 
-	x = (a > b) ? a-b: a+b;
-	// a > b ? printf("%d - %d = %d \n", a, b, a - b) : printf("%d + %d = %d \n", a, b, a + b);
+	}
 
-	printf("%d", x);
-
-	return 0;
 }

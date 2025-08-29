@@ -1,17 +1,19 @@
+//while 문으로 1부터 100까지의 합
 #include <stdio.h>
 
 int main() {
-	char data = 'a';
-	char key = 0xff;
-	char encrpted_data, orig_data;
+	int i, n, sum;
 
-	printf("원래의 문자 = %c \n", data);
+	printf("정수를 입력하시오:");
+	scanf("%d", &n);
 
-	encrpted_data = data ^ key;
-	printf("암호화된 문자 = %c \n", encrpted_data);
+	i = 1;
+	sum = 0;
 
-	orig_data = encrpted_data ^ key;
-	printf("복원된 문자 = %c \n", orig_data);
-
+	while (i <= n) {
+		sum += i;
+		i++;
+	}
+	printf("1부터 %d까지의 합은 %d입니다.\n", n, sum);
 	return 0;
 }

@@ -1,14 +1,21 @@
-/* 복합 대입 연산자 프로그램 */
 #include <stdio.h>
 
 int main() {
-	int x = 10, y = 10, z = 33;
+	int score;
 
-	x += 1;
-	y * 2;
-	z %= 10 + 20;
+	printf("성적을 입력하시오: ");
+	scanf("%d", &score);
 
-	printf("x = %d y = %d z = %d \n", x, y, z);
+	if (score >= 90)
+		printf("합격: 학점A\n");
+	else if (score >= 80)
+		printf("합격: 학점B\n");
+	else if (score >= 70)
+		printf("합격: 학점C\n");
+	else if (score >= 60)
+		printf("합격: 학점D\n");
+	else
+		printf("불합격: 학점F\n");
 
 	return 0;
 }

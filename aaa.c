@@ -1,11 +1,33 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 int main() {
-	bool abe = true;
+	char op;
+	int x, y;
 
-	printf("%d\n", true + 1);	// 2
-	printf("%d\n", abe + 1);	// 2
-	printf(abe ? "true" : "false");
-	printf("\n%s", abe ? "true" : "false");
+	printf("수식을 입력하시오: \n");
+	printf("(예: 2+5) \n");
+	printf(">> ");
+	scanf("%d %c %d", &x, &op, &y);
+
+	switch(op) {
+		case '+':
+			printf("%d %c %d = %d \n", x, op, y, x + y);
+			break;
+		case '-':
+			printf("%d %c %d = %d \n", x, op, y, x - y);
+			break;
+		case '*':
+			printf("%d %c %d = %d \n", x, op, y, x * y);
+			break;
+		case '/':
+			printf("%d %c %d = %d \n", x, op, y, x / y);
+			break;
+		case '+%':
+			printf("%d %c %d = %d \n", x, op, y, x % y);
+			break;
+		default:
+			printf("지원되지 않는 연산자입니다. \n");
+			break;
+	}
+	return 0;
 }

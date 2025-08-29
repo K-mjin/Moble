@@ -1,82 +1,174 @@
 #include <stdio.h>
-#include <limits.h>
+#define spm 60
+#define mpt 3600
 
 int main() {
-    ///* 다양한 정수 출력 방식 */
-    //int a = 12345;
+	/*int number;
 
-    //printf("(1)value=%d \n", a);
-    //printf("(2)value=%3d \n", a);
-    //printf("(3)value=%8d \n", a);
-    //printf("(4)value=%08d \n", a); 
+	printf("정수를 입력하시오:");
+	scanf("%d", &number);
 
+	if (number > 0)
+		printf("양수입니다. \n");
 
-    ///* 다양한 실수 출력 방식*/
-    //float x = 136.578900;
-    //printf("(1)x=%f \n", x);
-    //printf("(2)x=%2.3f \n", x);
-    //printf("(3)x=%10.5f \n", x);
-    //printf("(4)x=%012.5f \n", x);
+	printf("입력된 값은 %d입니다.", number);*/
 
+	//// if문을 사용하여 절대값을 구하는 프로그램
+	//int number;
 
-    ///* 10, 8, 6진수 출력 */
-    //int a;
+	//printf("정수를 입력하시오: ");
+	//scanf("%d", &number);
 
-    //a = 256;
+	//if (number < 0)
+	//	number = -number;
 
-    //printf("10진수 = %d \n", a);
-    //printf("8진수 = %o \n", a);
-    //printf("16진수 = %x \n", a);
+	//printf("절대값은 %d 입니다. \n", number);
 
+	//// if-else문을 이용하여 홀수와 짝수를 구분한다.
+	//int number;
 
-    ///* 변수와 상수 */
-    //float radius;
-    //float area;
+	//printf("정수를 입력하시오:");
+	//scanf("%d", &number);
 
-    //printf("원의 면적을 입력하시오: ");
-    //scanf("%f", &radius);
+	//if (number % 2 == 0)
+	//	printf("짝수입니다.\n");
+	//else
+	//	printf("홀수입니다.\n");
 
-    //area = 3.141592 * radius * radius;
-    //printf("원의 면적: %f \n", area);
+	//// 사용자로부터 두 개의 정수를 입력받아서 정수간의
+	//// 나눗셈을 실행한다. 나눗셈을 하기 전에 분모가 0인지를
+	//// if문을 이용하여 검사한다.
+	//int n1, n2, n3;
 
+	//printf("분자를 입력하시오: ");
+	//scanf("%d", &n1);
+	//printf("분모를 입력하시오: ");
+	//scanf("%d", &n2);
 
-    //int x;
-    //printf("변수 x의 크기: %d \n", sizeof(x));
-    //printf("char의 크기: %d \n", sizeof(char));
-    //printf("int의 크기: %d \n", sizeof(int));
-    //printf("short의 크기: %d \n", sizeof(short));
-    //printf("long의 크기: %d \n", sizeof(long));
-    //printf("long long의 크기: %d \n", sizeof(long long));
-    //printf("float의 크기: %d \n", sizeof(float));
-    //printf("double의 크기: %d \n", sizeof(double));
+	//if (n2 == 0)
+	//	printf("0으로 나눌 수 없습니다.\n");
+	//else {
+	//	n3 = n1 / n2;
+	//	printf("결과는 %d입니다.\n", n3);
+	//}
 
+	//// 윤년 판단 프로그램
+	//int year;
 
-    ///* 정수형 자료형의 크기를 계산하는 프로그램 */
-    //short year = 0;         // 0으로 초기화한다.
-    //int sale = 0;           // 0으로 초기화한다.
-    //long total_sale = 0;    // 0으로 초기화한다.
-    //long long large_value;  // 64비트 자료형
+	//printf("연도를 입력하시오:");
+	//scanf("%d", &year);
 
-    //year = 10;                // 약 3만 2천을 넘지 않도록 주의
-    //sale = 200000000;         // 약 21억을 넘지 않도록 주의
-    //total_sale = year * sale; // 약 21억을 넘지 않도록 주의
+	//if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+	//	printf("%d년은 윤년입니다.", year);
+	//else
+	//	printf("%d년은 윤년이 아닙니다.", year);
 
-    //printf("total_sale = %d \n", total_sale);
+	//// 학생들의 성적을 받아서 학점을 출력하는 프로그램을
+	//// 작성하여 실행하여보자.
+	//int score;
 
+	//printf("성적을 입력하시오: ");
+	//scanf("%d", &score);
 
-    ///* 오버플로우 */
-    //short s_money = SHRT_MAX;             // 최대값으로 초기화한다. 32767
-    //unsigned short u_money = USHRT_MAX;   // 최대값으로 초기화한다. 65535
+	//if (score >= 90)
+	//	printf("A학점");
+	//else if (score >= 80)
+	//	printf("B학점");
+	//else if (score >= 70)
+	//	printf("C학점");
+	//else if (score >= 60)
+	//	printf("D학점");
+	//else
+	//	printf("F학점");
 
-    //s_money = s_money + 1;
-    //printf("s_money = %d \n", s_money);
+	//// 키보드에서 문자를 받아서 문자들을 대문자(A-Z0,
+	//// 소문자(a-z), 숫자(0-9), 그 외의 문자들로 구분하여 보자.
+	//char ch;
 
-    //u_money = u_money + 1;
-    //printf("u_money = %d \n", u_money);
+	//printf("문자를 입력하시오: ");
+	//scanf("%c", &ch);
 
+	//if (ch >= 'A' && ch <= 'Z')
+	//	printf("%c는 대문자입니다.", ch);
+	//else if (ch >= 'a' && ch <= 'z')
+	//	printf("%c는 소문자입니다.", ch);
+	//else if (ch >= '0' && ch <= '9')
+	//	printf("%c는 숫자입니다.", ch);
+	//else
+	//	printf("%c는 기타문자입니다.", ch);
 
-    printf("Welcome to the c programming tutorial \n");
+	//// 산술계산기
+	//char op;
+	//int x, y, result;
 
+	//printf("수식을 입력하시오\n");
+	//printf("(예: 2 + 5)");
+	//printf(">> ");
+	//scanf("%d %c %d", &x, &op, &y);
 
-    return 0;
+	//if (op == '+')
+	//	result = x + y;
+	//else if (op == '-')
+	//	result = x - y;
+	//else if (op == '*')
+	//	result = x * y;
+	//else if (op == '/')
+	//	result = x / y;
+	//else if (op == '%')
+	//	result = x % y;
+	//else
+	//	printf("지원되지 않는 연산자입니다.");
+
+	//printf("%d %c %d = %d", x, op, y, result);
+
+	/*int input, minute, second, hour;
+	
+	printf("초를 입력하시오:");
+	scanf("%d", &input);
+
+	hour = input / mpt;
+	second = input % mpt;
+	minute = second / spm;
+	second = second % spm;
+
+	printf("%d초는 %d시 %d분 %d초 입니다. \n", input, hour, minute, second);*/
+
+	int user, change;
+	int price, c5000, c1000, c500, c100, c50, c10;
+
+	printf("물건값을 입력하시오: ");
+	scanf("%d", &price);
+	printf("사용자가 낸 돈");
+	scanf("%d", &user);
+
+	change = user - price;
+	
+	c5000 = change / 5000;
+	change = change % 5000;
+	
+	c1000 = change / 1000;
+	change = change % 1000;
+	
+	c500 = change / 500;
+	change = change % 500;
+
+	c100 = change / 100;
+	change = change % 100;
+
+	c50 = change / 50;
+	change = change % 50;
+
+	c10 = change / 10;
+	change = change % 10;
+
+	printf("오천원권 : %d장 \n", c5000);
+	printf("천원권 : %d장 \n", c1000);
+	printf("오백원권 : %d장 \n", c500);
+	printf("백원권 : %d장 \n", c100);
+	printf("오십원권 : %d장 \n", c50);
+	printf("십원권 : %d장 \n", c10);
+
+	printf("거스름돈 총 금액 : %d \n", 5000 * c5000 + 1000 * c1000 + 500 * c500 + 100 * c100 + 50 * c50 + 10 * c10);
+
+	return 0;
 }

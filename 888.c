@@ -1,14 +1,29 @@
 #include <stdio.h>
 
 int main() {
-	int x, y;
+	char op;
+	int x, y, result;
 
-	printf("두개의 정수를 입력하시오: ");
-	scanf("%d %d", &x, &y);
+	printf("수식을 입력하시오:");
+	printf("(예: 2 + 5) ");
+	printf(">> ");
 
-	printf("%d && %d의 결과값: %d \n", x, y, x && y);
-	printf("%d || %d의 결과값: %d \n", x, y, x || y);
-	printf("!%d의 결과값: %d \n", x, !x);
+	scanf("%d %c %d", & x, & op, & y);
+
+	if (op == '+')
+		result = x + y;
+	else if (op == '-')
+		result = x - y;
+	else if (op == '*')
+		result = x * y;
+	else if (op == '/')
+		result = x / y;
+	else if (op == '%')
+		result = x % y;
+	else
+		printf("지원되지 않는 연산자입니다.");
+
+	printf("%d %c %d = %d", x, op, y, result);
 
 	return 0;
 }
