@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ConsoleApp_0721
 {
@@ -6,17 +10,17 @@ namespace ConsoleApp_0721
     {
         int a, b, c;
 
-        public MyClass()
+        public MyClass() 
         {
             this.a = 5425;
             Console.WriteLine("MyClass()");
         }
-        public MyClass(int b) : this()  // 매개변수가 없는 생성자 호출
+        public MyClass(int b) : this()
         {
             this.b = b;
             Console.WriteLine($"MyClass({b})");
         }
-        public MyClass(int b, int c) : this(b)  // 매개변수가 1인 생성자 호출
+        public MyClass(int b, int c) : this(b)
         {
             this.c = c;
             Console.WriteLine($"MyClass({b}, {c})");
@@ -26,7 +30,8 @@ namespace ConsoleApp_0721
             Console.WriteLine($"a:{a}, b:{b}, c:{c}");
         }
     }
-    internal class Program
+
+    class Program
     {
         static void Main(string[] args)
         {
@@ -34,12 +39,12 @@ namespace ConsoleApp_0721
             a.printFields();
             Console.WriteLine();
 
-            MyClass b = new MyClass(1); // new MyClass(b:1);
+            MyClass b = new MyClass(1);
             b.printFields();
             Console.WriteLine();
 
-            MyClass c = new MyClass(10, 20);    // new Myclass(b:10, c:20);
+            MyClass c = new MyClass(10, 20);
             c.printFields();
+            Console.WriteLine();
         }
-    }
 }
