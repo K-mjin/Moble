@@ -1,13 +1,21 @@
-#include "basic.h"
+/* 1부터 n까지의 합(1+2+3+...n)을 계산하는 문제를
+순환기법을 이용해 구현 */
+#include <stdio.h>
 
-int main() {
-	float a, b, c, sum, avr;
+int sum(int a) {
+	if (a != 0)
+		return a + sum(a - 1);
+	else
+		return a;
+}
 
-	printf("세개의 실수를 입력하시오 :");
-	scanf("%f %f %f", &a, &b, &c);
+int main(void) {
+	int a;
+	int result = 0;
 
-	sum = a + b + c;
-	avr = sum / 3;
+	printf("정수를 입력하시오: ");
+	scanf("%d", &a);
+	result = sum(a);
 
-	printf("합계 : %.3f, 평균 : %.3f", sum, avr);
+	printf("1부터 n까지의 합은 %d\n.", a, result);
 }
