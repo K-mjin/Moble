@@ -1,18 +1,44 @@
 #include <stdio.h>
 
-// 포인터와 배열의 관계
+struct student {
+	int number;
+	char name[10];
+	double grade;
+};
+
+//int main(void) {
+//	struct student s;
+//
+//	s.number = 20190001;
+//	strcpy(s.name, "홍길동");
+//	s.grade = 4.3;
+//	printf("학번 : %d\n", s.number);
+//	printf("이름 : %s\n", s.name);
+//	printf("학점 : %f\n", s.grade);
+//
+//	printf("구조체 사이즈 : %u\n", sizeof(s));	// 24byte
+//	printf("학번 : %u\n", &s.number);
+//	printf("이름 : %u\n", &s.name);
+//	printf("학점 : %u\n", &s.grade);
+//
+//	return 0;
+//}
+
 int main(void) {
-	int a[] = { 10, 20, 30, 40, 50 };
+	struct student s;
 
-	printf("&a[0] = %u\n", &a[0]);
-	printf("&a[1] = %u\n", &a[1]);
-	printf("&a[2] = %u\n", &a[2]);
+	printf("학번을 입력하시오: ");
+	scanf("%d", &s.number);
 
-	printf("a = %u\n", a);
-	printf("a+1 = %u\n", a+1);
-	printf("*a = %d\n", *a);
-	printf("a[0] = %d\n", a[0]);
-	printf("*(a+1) = %d\n", *(a+1));
+	printf("이름을 입력하시오: ");
+	scanf("%9s", s.name, 10);
+
+	printf("학점을 입력하시로(실수):");
+	scanf("%lf", &s.grade);
+
+	printf("학번 : %d\n", s.number);
+	printf("이름 : %s\n", s.name);
+	printf("학점 : %f\n", s.grade);
 
 	return 0;
 }

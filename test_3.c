@@ -1,44 +1,33 @@
 #include <stdio.h>
-void circuit(int(*pArr)[4]);
-void printarr(int(*pArr)[4]);
+
+struct point {
+	int x, y;
+};
+
+int equal(struct point p1, struct point p2) {
+	if (p1.x == p2.x && p1.y == p2.y)
+		return 1;
+	else
+		return 0;
+}
 
 int main(void) {
-	int arr[4][4] = {
-		{1, 2, 3, 4},
-		{5, 6, 7, 8},
-		{9, 10, 11, 12},
-		{13, 14, 15, 16}
-	};
-	int i;
+	struct point p1;
+	struct point p2;
 
-	printf("처음 출력 되는 배열\n");
-	printarr(arr);
-	printf("\n");
-	for (i = 0; i < 4; i++) {
-		printf("출력 되는 배열 \n");
-		circuit(arr);
-		printarr(arr);
-		printf("\n");
-	}
-}
+	while (1) {
+		printf("p1의 x와 y좌표 하나씩 입력");
+		scanf("%d %d", &p1.x, &p1.y);
+		printf("p2의 x와 y좌표 하나씩 입력");
+		scanf("%d %d", &p2.x, &p2.y);
 
-void circuit(int(*pArr)[4]) {
-	int arr[4][4];
-	int i, j;
-	for (i = 0; i < 4; i++)
-		for (j = 0; j < 4; j++) {
-			arr[i][j] = pArr[i][j];
-		}
-	for (i = 0; i < 4; i++)
-		for (j = 0; j < 4; j++)
-			pArr[i][j] = arr[3 - j][i];
-}
+		if (p2.x == 0 && p2.y == 0)
+			break;
+		if (equal(p1, p2) == 1)
+			printf("일치함\n");
+		else
+			printf("일치하지 않음\n");
 
-void printarr(int(*pArr)[4]) {
-	int i, j;
-	for (i = 0; i < 4; i++) {
-		for (j = 0; j < 4; j++)
-			printf("%4d", pArr[i][j]);
-		printf("\n");
+		return 0;
 	}
 }

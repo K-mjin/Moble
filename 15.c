@@ -1,14 +1,29 @@
 #include <stdio.h>
-#include <string.h>
+
+struct student {
+	int number;
+	char name[20];
+	double grade;
+};
+
+struct student list[] = {
+	{20120001, "홍길동", 4.2},
+	{20120002, "김철수", 3.2},
+	{20120003, "김영희", 3.9}
+
+};
 
 int main(void) {
-	char key[] = "C";
-	char buffer[80] = "";
+	struct student super_stu;
+	int i, size;
 
-	do {
-		printf("임베디드 장치에서 가장 많이 사용되는 언어는? ");
-		gets(buffer, sizeof(buffer));
-	} while (strcmp(key, buffer) != 0);
-	printf("맞았습니다!");
-	return 0;
+	size = sizeof(list) / sizeof(list[0]);
+	super_stu = list[0];
+
+	for (i = 0; i < size; i++) {
+		if (list[i].grade > super_stu.grade)
+			super_stu = list[i];
+	}
+	printf("평점이 가장 높은 학색은 (이름 %s, 학번 %d, 평점 %f)입니다\n",
+		super_stu.name, super_stu.number, super_stu.grade);
 }

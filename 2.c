@@ -1,19 +1,28 @@
 #include <stdio.h>
+#include <math.h>
+
+struct point {
+	int x;
+	int y;
+};
 
 int main(void) {
-	int a[] = { 10, 20, 30, 40, 50 };
-	int* p;
+	struct point p1, p2;
+	int xdiff, ydiff;
+	double dist;
 
-	p = a;
+	printf("점의 좌표를 입력하시오(x, y): ");
+	scanf("%d %d", &p1.x, &p1.y);
 
-	printf("a[0] = %d a[1] = %d a[2] = %d \n", a[0], a[1], a[2]);
-	printf("p[0] = %d p[1] = %d p[2] = %d \n", p[0], p[1], p[2]);
+	printf("점의 좌표를 입력하시오(x, y): ");
+	scanf("%d %d", &p2.x, &p2.y);
 
-	p[0] = 60;
-	p[1] = 70;
-	p[2] = 80;
+	xdiff = p1.x - p2.x;
+	ydiff = p1.y - p2.y;
 
-	printf("a[0] = %d a[1] = %d a[2] = %d \n", a[0], a[1], a[2]);
-	printf("p[0] = %d p[1] = %d p[2] = %d \n", p[0], p[1], p[2]);
+	dist = sqrt((double)(xdiff * xdiff + ydiff * ydiff));
+
+	printf("두 점 사이의 거리는 %lf입니다.\n", dist);
+
 	return 0;
 }

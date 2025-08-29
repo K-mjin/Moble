@@ -1,15 +1,27 @@
 #include <stdio.h>
 
-int main(void) {
-	char name[100];
-	char address[100];
+struct vector {
+	float x;
+	float y;
+};
 
-	printf("이름을 입력하시오: ");
-	gets(name, sizeof(name));
-	printf("현재 거주하는 주소를 입렵하시오: ");
-	gets(address, sizeof(name));
-	puts(address);
-	puts(name);
-	printf("안녕하세요, %s에 사는 %s씨. \n", address, name);
+struct vector get_vector_sum(struct vector a, struct vector b);
+
+int main(void) {
+	struct vector a = { 2.0, 3.0 };
+	struct vector b = { 5.0, 6.0 };
+	struct vector sum;
+
+	sum = get_vector_sum(a, b);
+	printf("벡터의 합은 (%f, %f)입니다.\n", sum.x, sum.y);
+
 	return 0;
+}
+
+struct vector get_vector_sum(struct vector a, struct vector b) {
+	struct vector result;
+	result.x = a.x + b.x;
+	result.y = a.y + b.y;
+
+	return result;
 }

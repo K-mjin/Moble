@@ -1,18 +1,31 @@
 #include <stdio.h>
 
+struct point {
+	int x;
+	int y;
+};
+
+struct rect {
+	struct point p1;
+	struct point p2;
+};
+
 int main(void) {
-	int arr[5] = { 1,2,3,4,5 };
+	struct rect r;
+	int w, h, area, peri;
 
-	int* pArr = arr;
-	printf("arr의 주소 = %u\n", arr);
-	printf("pArr의 주소 = %u\n", pArr);
+	printf("왼쪽 상단의 좌표를 입력하시오: ");
+	scanf("%d %d", &r.p1.x, &r.p1.y);
 
-	printf("%d\n", *pArr);
-	printf("%d\n", *(++pArr));
-	printf("%d\n", *(++pArr));
-	printf("pArr의 주소 = %u\n", pArr);
+	printf("오른쪽 상단의 좌표를 입력하시오: ");
+	scanf("%d %d", &r.p2.x, &r.p2.y);
 
-	printf("%d\n", *(pArr + 1));
-	printf("%d\n", *(pArr + 2));
-	printf("pArr의 주소 = %u\n", pArr);
+	w = r.p2.x - r.p1.x;
+	h = r.p1.y - r.p2.y;
+
+	area = w * h;
+	peri = 2 * w + 2 * h;
+	printf("면적은 %d이고 둘레는 %d입니다. \n", area, peri);
+
+	return 0;
 }

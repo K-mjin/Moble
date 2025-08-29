@@ -1,26 +1,19 @@
-///* 다음과 같은 2차원 배열을 생성하고 각 행의 합계, 각 열의
-//합계를 구하여 출력하는 프로그램을 작성하시오. */
-//#include <stdio.h>
-//
-//int main(void) {
-//	int data[3][5] = { {12, 56, 32, 16, 98},
-//						{99, 56, 34, 41, 3},
-//						{65, 3, 87, 78, 21} };
-//	
-//	int i, j, sum;
-//
-//	for (i = 0; i < 3; i++) {
-//		sum = 0;
-//		for (j = 0; j < 5; j++) {
-//			sum += data[i][j];
-//		}
-//		printf("%d행의 합계 : %d\n", i, sum);
-//	}
-//	for (j = 0; j < 5; j++) {
-//		sum = 0;
-//		for (i = 0; i < 3; i++) {
-//			sum += data[i][j];
-//		}
-//		printf("%d열의 합계 : %d\n", j, sum);
-//	}
-//}
+#include <stdio.h>
+struct number {
+	double real;
+	double complex;
+};
+
+int main(void) {
+	struct number n1, n2;
+
+	printf("c1의 실수와 허수를 각각 하나씩 입력");
+	scanf("%lf %lf", &n1.real, &n1.complex);
+	printf("c2의 실수와 허수를 각각 하나씩 입력");
+	scanf("%lf %lf", &n2.real, &n2.complex);
+
+	print(n1);
+	print(n2);
+	c3 = add(n1, n2);
+	print(n3);
+}
