@@ -1,18 +1,18 @@
 #include <stdio.h>
-#define R 3
-#define C 5
 
 int main(void) {
-	int a[R][C] = { {87, 98, 80, 76, 3},
-					{99, 89, 90, 90, 0},
-					{65, 68, 50, 49, 0}
-	};
-
 	int i;
-	for (i = 0; i < R; i++) {
-		double final_scores = a[i][0] * 0.3 + a[i][1] * 0.4 +
-			a[i][2] * 0.2 + a[i][3] * 0.1 - a[i][4];
-		printf("학생 #%i의 최종 성적 = %10.2f\n", i + 1, final_scores);
+	char str[4];
+	str[0] = 'a';
+	str[1] = 'b';
+	str[2] = 'c';
+	str[3] = '\0';
+
+	i = 0;
+
+	while (str[i] != '\0') {
+		printf("%c", str[i]);
+		i++;
 	}
 	return 0;
 }

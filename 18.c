@@ -1,29 +1,28 @@
 #include <stdio.h>
-#define SIZE 7
-
-void square_array(int a[], int size);
-void print_array(int a[], int size);
+#define ENTRIES 5
 
 int main(void) {
-	int list[SIZE] = { 1,2,3,4,5,6,7 };
+	int i, index;
+	char dic[ENTRIES][2][30] = {
+		{"book", "책"},
+		{"boy", "소년"},
+		{"computer", "컴퓨터"},
+		{"launguage", "언어"},
+		{"rain", "비"}
+	};
+	char word[30];
 
-	print_array(list, SIZE);
-	square_array(list, SIZE);
-	print_array(list, SIZE);
+	printf("단어를 입력하시오: ");
+	scanf("%s", word);
 
-	return 0;
-}
-
-void square_array(int a[], int size) {
-	int i;
-	for (i = 0; i < size; i++)
-		a[i] = a[i] * a[i];
-}
-
-void print_array(int a[], int size) {
-	int i;
-
-	for (i = 0; i < size; i++)
-		printf("%3d", a[i]);
-	printf("\n");
+	index = 0;
+	
+	for (i = 0; i < ENTRIES; i++) {
+		if (strcmp(dic[index][0], word) == 0) {
+			printf("%s: %s \n", word, dic[index][1]);
+			return 0;
+		}
+		index++;
+	}
+	printf("사전에서 발견되지 않았습니다.\n");
 }

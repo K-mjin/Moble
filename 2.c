@@ -1,18 +1,19 @@
 #include <stdio.h>
-#define SIZE 10
 
 int main(void) {
-	int key, i;
-	int list[SIZE] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	int a[] = { 10, 20, 30, 40, 50 };
+	int* p;
 
-	printf("탐색할 값을 입력하시오: ");
-	scanf("%d", &key);
+	p = a;
 
-	for (i = 0; i < SIZE; i++)
-		if (list[i] == key)
+	printf("a[0] = %d a[1] = %d a[2] = %d \n", a[0], a[1], a[2]);
+	printf("p[0] = %d p[1] = %d p[2] = %d \n", p[0], p[1], p[2]);
 
-	printf("탐색 성공 인덱스 = %d\n", i);
-	printf("탐색 종료\n");
+	p[0] = 60;
+	p[1] = 70;
+	p[2] = 80;
 
+	printf("a[0] = %d a[1] = %d a[2] = %d \n", a[0], a[1], a[2]);
+	printf("p[0] = %d p[1] = %d p[2] = %d \n", p[0], p[1], p[2]);
 	return 0;
 }

@@ -1,22 +1,14 @@
 #include <stdio.h>
-// 기울기와 y절편을 계산
-
-int get_line_parameter(int x1, int y1, int x2, int y2, float* slope, float* yintercept) {
-	if (x1 == x2)
-		return -1;
-	else {
-		*slope = (float)(y2 - y1) / (float)(x2 - x1);
-		*yintercept = y1 - (*slope) * x1;
-		return 0;
-	}
-}
+#include <string.h>
 
 int main(void) {
-	float s, y;
-	
-	if (get_line_parameter(3, 3, 6, 6, &s, &y) == -1)
-		printf("에러\n");
-	else
-		printf("기울기는 %f, y절편은 %f\n", s, y);
+	char key[] = "C";
+	char buffer[80] = "";
+
+	do {
+		printf("임베디드 장치에서 가장 많이 사용되는 언어는? ");
+		gets(buffer, sizeof(buffer));
+	} while (strcmp(key, buffer) != 0);
+	printf("맞았습니다!");
 	return 0;
 }

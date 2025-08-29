@@ -1,16 +1,15 @@
 #include <stdio.h>
 
 int main(void) {
-	int x = 10, y = 20;
-	int* p;
+	char name[100];
+	char address[100];
 
-	p = &x;
-	printf("p = %d\n", p);	// printf("&x = %d\n", &x);
-	printf("*p = %d\n\n", *p);
-
-	p = &y;
-	printf("p = %d\n", p);	// printf("&y = %d\n", &y);
-	printf("*p = %d\n", *p);
-
+	printf("이름을 입력하시오: ");
+	gets(name, sizeof(name));
+	printf("현재 거주하는 주소를 입렵하시오: ");
+	gets(address, sizeof(name));
+	puts(address);
+	puts(name);
+	printf("안녕하세요, %s에 사는 %s씨. \n", address, name);
 	return 0;
 }

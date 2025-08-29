@@ -1,21 +1,16 @@
 #include <stdio.h>
-#define STUDENTS 5
-int get_average(int scores[], int n);	// 1
 
-int main(vodi) {
-	int scores[STUDENTS] = { 1,2,3,4,5 };
-	int avg;
-
-	avg = get_average(scores, STUDENTS);
-	printf("평균은 %d입니다.\n", avg);
-	return 0;
-}
-
-int get_average(int scores[], int n) {	// 2
+int main(void) {
 	int i;
-	int sum = 0;
+	char menu[5][10] = {
+		"init",
+		"open",
+		"close",
+		"read",
+		"write"
+	};
 
-	for (i = 0; i < n; i++)
-		sum += scores[i];
-	return sum / n;
+	for (i = 0; i < 5; i++)
+		printf("%d번째 메뉴 : %s\n", i, menu[i]);
+	return 0;
 }

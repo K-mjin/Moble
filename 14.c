@@ -1,24 +1,18 @@
+#include <string.h>
 #include <stdio.h>
-void swap(int *px, int *py);
 
 int main(void) {
-	int a = 100, b = 200;
-	printf("a = %d b = %d\n", a, b);
+	char s[] = "language";
+	char c = 'g';
+	char* p;
+	int loc;
 
-	swap(&a, &b);
-
-	printf("a = %d b = %d\n", a, b);
-
+	p = strchr(s, c);
+	if (p == NULL)
+		printf("%c가 발견되지 않았음\n", c);
+	else {
+		loc = (int)(p - s);
+		printf("%s에서 첫 번째 %c가 %d에서 발견되었음\n", s, c, loc);
+	}
 	return 0;
-}
-
-void swap(int *px, int *py) {
-	int tmp;
-	printf("x = %d y = %d\n\n", *px, *py);
-
-	tmp = *px;
-	*px = *py;
-	*py = tmp;
-
-	printf("x = %d y = %d\n", *px, *py);
 }

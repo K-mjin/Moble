@@ -1,22 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define ROWS 3
-#define COLS 5
+
+// 0부터 99까지의 난수(실수형태)를 발생하여 크기가 3인 
+// 배열 p에 저장한다.
+void getSensorData(double* p) {
+	srand((unsigned)time(NULL));
+
+	p[0] = rand() % 100;
+	p[1] = rand() % 100;
+	p[2] = rand() % 100;
+	return 0;
+}
 
 int main(void) {
-	int s[ROWS][COLS];	// 2차원 배열 선언
-	int i, j;	// 2개의 인덱스 변수
-	srand((unsigned)time(NULL));	// 난수 생성기 초기화
+	double sensorData[3];
+	getSensorData(sensorData);
 
-	for (i = 0; i < ROWS; i++)
-		for (j = 0; j < COLS; j++)
-			s[i][j] = rand() % 100;
-
-	for (i = 0; i < ROWS; i++) {
-		for (j = 0; j < COLS; j++)
-			printf("% 02d", s[i][j]);
-		printf("\n");
-	}
+	printf("왼쪽 센서와 장애물과의 거리 : %lf\n", sensorData[0]);
+	printf("중간 센서와 장애물과의 거리 : %lf\n", sensorData[1]);
+	printf("오른쪽 센서와 장애물과의 거리 : %lf\n", sensorData[2]);
 	return 0;
 }
