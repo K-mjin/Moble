@@ -1,28 +1,34 @@
+// 이중포인터의 swap()
 #include <stdio.h>
-#include <math.h>
 
-struct point {
-	int x;
-	int y;
-};
+void print(int** qpi, int** qpj) {
+	int* temp = NULL;
+	temp = *qpi;
+	*qpi = *qpj;
+	*qpj = temp;
+}
 
 int main(void) {
-	struct point p1, p2;
-	int xdiff, ydiff;
-	double dist;
+	int i = 100;
+	int j = 10;
+	int* pi = &i;
+	int* pj = &j;
+	int** qpi = &pi;
+	int** qpj = &pj;
+	printf("함수호출전\n");
+	printf("i=%d  *pi=%d  **qpi=%d \n", i, *pi, **qpi);
+	printf("j=%d  *pj=%d  **qpj=%d \n", j, *pj, **qpj);
+	printf("i의 주소값=%u  pi=%u  *qpi=%u \n", &i, pi, *qpi);
+	printf("j의 주소값=%u  pj=%u  *qpj=%u \n", &j, pj, *qpj);
+	printf("주소값 pi = %u  qpi = %u \n", &pi, qpi);
+	printf("주소값 pj = %u  qpj = %u \n", &pj, qpj);
 
-	printf("점의 좌표를 입력하시오(x, y): ");
-	scanf("%d %d", &p1.x, &p1.y);
-
-	printf("점의 좌표를 입력하시오(x, y): ");
-	scanf("%d %d", &p2.x, &p2.y);
-
-	xdiff = p1.x - p2.x;
-	ydiff = p1.y - p2.y;
-
-	dist = sqrt((double)(xdiff * xdiff + ydiff * ydiff));
-
-	printf("두 점 사이의 거리는 %lf입니다.\n", dist);
-
-	return 0;
+	print(&pi, &pj);
+	printf("함수호출후\n");
+	printf("i=%d  *pi=%d  **qpi=%d \n", i, *pi, **qpi);
+	printf("j=%d  *pj=%d  **qpj=%d \n", j, *pj, **qpj);
+	printf("i의 주소값=%u  pi=%u  *qpi=%u \n", &i, pi, *qpi);
+	printf("j의 주소값=%u  pj=%u  *qpj=%u \n", &j, pj, *qpj);
+	printf("주소값 pi = %u  qpi = %u \n", &pi, qpi);
+	printf("주소값 pj = %u  qpj = %u \n", &pj, qpj);
 }

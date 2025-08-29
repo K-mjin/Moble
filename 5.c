@@ -1,27 +1,57 @@
+// 함수 포인터 배열
 #include <stdio.h>
-#define SIZE 3
 
-struct student
-{
-	int number;
-	char name[20];
-	double grade;
-};
+// 함수 원형 정의
+void menu(void);
+int add(int x, int y);
+int sub(int x, int y);
+int mul(int x, int y);
+int div1(int x, int y);
+
+void menu(void) {
+	printf("========================\n");
+	printf("0. 덧셈\n");
+	printf("1. 뺄셈\n");
+	printf("2. 곱셈\n");
+	printf("3. 나눗셈\n");
+	printf("4. 종료\n");
+	printf("========================\n");
+}
 
 int main(void) {
-	struct student list[SIZE];
-	int i;
+	int choice, result, x, y;
+	
+	// 함수 포인터 배열을 선언하고 초기화한다.
+	int (*pf[4])(int, int) = { add, sub, mul, div1 }; // 함수 이름이 배열의 요소 값이 됨
 
-	for (i = 0; i < SIZE; i++) {
-		printf("학번을 입력하시오: ");
-		scanf("%d", &list[i].number);
-		printf("이름을 입력하시오: ");
-		scanf("%s", &list[i].name);
-		printf("학점을 입력하시오: ");
-		scanf("%lf", &list[i].grade);
+	while (1) {
+		menu();
+		printf("메뉴를 선택하시오: ");
+		scanf("%d", &choice);
+
+		if (choice < 0 || choice >= 4)
+			break;
+		printf("2개의 정수를 입력하시오: ");
+		scanf("%d %d", &x, &y);
+
+		result = pf[choice](x, y);	// 함수 포인터를 이용한 함수 호출
+		printf("연산 결과 = %d\n", result);
 	}
-
-	for (i = 0; i < SIZE; i++)
-		printf("학번 : %d, 이름 : %s, 학점 : %lf\n", list[i].number, list[i].name, list[i].grade);
 	return 0;
+}
+
+int add(int x, int y) {
+	return x + y;
+}
+
+int sub(int x, int y) {
+	return x - y;
+}
+
+int mul(int x, int y) {
+	return x * y;
+}
+
+int div1(int x, int y) {
+	return x / y;
 }

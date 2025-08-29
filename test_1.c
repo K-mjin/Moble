@@ -1,29 +1,30 @@
 #include <stdio.h>
-struct member {
-	char title[20];
-	char sender[50];
-	char receiver[50];
-	char content[20];
-};
+
+int get_sum(int array[], int size) {
+	int i;
+	int sum = 0;
+
+	for (i = 0; i < size; i++) {
+		sum += array[i];
+	}
+	return sum;
+}
 
 int main(void) {
+	int m[3][6] = { {10,10,10,10,10,10},
+					{10,10,10,10,10,10},
+					{10,10,10,10,10,10} };
 
-	struct member m;
+	//int result = get_sum(m[0], 6);
+	//result += get_sum(m[1], 6);
+	//result += get_sum(m[2], 6);
 
+	//printf("정수의 합 = %d\n", result);
 
-	/*printf("메일제목 : ");
-	scanf("%s", &m.title);
-	printf("수신자 : ");
-	scanf("%s", &m.sender);
-	printf("발신자 : ");
-	scanf("%s", &m.receiver);
-	printf("내용 : ");
-	scanf("%s", &m.content);
+	//return 0;
 
-	printf("메일제목 : %s\n", m.title);
-	printf("수신자 : %s\n", m.sender);
-	printf("발신자 : %s\n", m.receiver);
-	printf("내용 : %s\n", m.content);*/
+	/*for (int i = 0; i < 3; i++) {
+		printf("%d\n", get_sum(m[i], sizeof(m[i]) / sizeof(int)));
 
-	// gets 로도 가능
+	}*/
 }

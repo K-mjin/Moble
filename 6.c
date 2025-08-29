@@ -1,36 +1,28 @@
-// 구조체를 가리키는 포인터
 #include <stdio.h>
+#include <math.h>
 
-struct student {
-	int number;
-	char name[20];
-	double grade;
-};
-
-int equal(struct student *p1, struct student *p2) {
-	if (p1->number == p2->number)
-		return 1;
-	else
-		return 0;
-}
+double f1(double k);
+double f2(double k);
+double formula(double (*pf)(double), int n);
 
 int main(void) {
-	struct student a = { 1, "hong", 3.8 };
-	struct student b = { 2, "kim", 4.0 };
-	if (equal(&a, &b) == 1)
-		printf("같은 학생 \n");
-	else
-		printf("다른 학생\n");
+	printf("%lf\n", formula(f1, 10));
+	printf("%lf\n", formula(f2, 10));
 }
 
-//int main(void) {
-//	struct student s = { 24, "kim", 4.3 };
-//	struct student* p;
-//
-//	p = &s;
-//
-//	printf("학번 = %d 이름 = %s 학점 = %lf \n", s.number, s.name, s.grade);
-//	printf("학번 = %d 이름 = %s 학점 = %lf \n", (*p).number, (*p).name, (*p).grade);
-//	printf("학번 = %d 이름 = %s 학점 = %lf \n", p->number, p->name, p->grade); 
-//	// (*p). 와 p-> 은 같은 의미
-//}
+double formula(double(*pf)(double), int n) { // 함수이름을 인자로 받을 때 같은 타입의 함수 포인터로 받아줄 수 있음
+	int i;
+	double sum = 0.0;
+
+	for (i = 1; i < n; i++)
+		sum += pf(i) * pf(i) + pf(i) + 1;
+	return sum;
+}
+
+double f1(double k) {
+	return 1.0 / k;
+}
+
+double f2(double k) {
+	return cos(k);
+}

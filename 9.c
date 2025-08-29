@@ -1,28 +1,30 @@
-// 구조체 변수의 리턴방식 (기본자료형 변수의 리턴방식과 동일)
+// void()형 포인터
 #include <stdio.h>
 
-struct simple {
-	int data1;
-	int data2;
-};
+void memzero(void* ptr, size_t len) {
+	char* p = (char*)ptr;
+	for (; len > 0; len--)
+		*p++ = 0;	// p를 1만큼 증가시키고나서 가리킴, 1만큼 증가는
+}					// 자료형의 크기만큼 증가하게 됨
 
-void show(struct simple ts);
-struct simple getdata(void);
+int main(void) {
+	char a[10];
+	memzero(a, sizeof(a));	// sizeof(a)의 크기는?
+	
+	for (int i = 0; i < 10; i++)
+		printf("%d ", a[i]);
+	printf("\n");
 
-int main() {
-	struct simple s = getdata();
-	show(s);
+	int b[10];
+	memzero(b, sizeof(b)); // sizeof(b)의 크기는?
 
-	return 0;
-}
+	for (int i = 0; i < 10; i++)
+		printf("%d ", b[i]);
+	printf("\n");
 
-void show(struct simple ts) {
-	printf("data1 : %d, data2 : %d\n", ts.data1, ts.data2);
-}
+	double c[10];
+	memzero(c, sizeof(c));	//size0f(c)의 크기는?
 
-struct simple getdata(void) { // 구조체 변수를 리턴받을 때 함수를 구조체로 받는다
-	struct simple temp;
-	scanf("%d %d", &temp.data1, &temp.data2);
-
-	return temp;	// 값에 의해 리턴됨(복사되어서)
+	for (int i = 0; i < 10; i++)
+		printf("%.2lf ", c[i]);
 }
