@@ -1,45 +1,33 @@
 ﻿using System;
 
-namespace ConsoleApp_0721
+namespace ConsoleApp_0724
 {
-    class MyClass
+    class Program
     {
-        int a, b, c;
+        delegate void TypeF(int a, int b);
 
-        public MyClass()
-        {
-            this.a = 5425;
-            Console.WriteLine("MyClass()");
-        }
-        public MyClass(int b) : this()  // 매개변수가 없는 생성자 호출
-        {
-            this.b = b;
-            Console.WriteLine($"MyClass({b})");
-        }
-        public MyClass(int b, int c) : this(b)  // 매개변수가 1인 생성자 호출
-        {
-            this.c = c;
-            Console.WriteLine($"MyClass({b}, {c})");
-        }
-        public void printFields()
-        {
-            Console.WriteLine($"a:{a}, b:{b}, c:{c}");
-        }
-    }
-    internal class Program
-    {
+        //static int Plus (int x, int y) {  return x + y; }
+        //static int Minus(int x, int y) { return x - y; }
+
+        static void Plus( int x, int y) {  Console.WriteLine(x + y); }
+        static void Minus(int x, int y) { Console.WriteLine(x - y); }
+        static void Multiple(int x, int y) { Console.WriteLine(x * y); }
+
         static void Main(string[] args)
         {
-            MyClass a = new MyClass();
-            a.printFields();
-            Console.WriteLine();
+            //TypeF delegateValue = new TypeF(Plus);
+            //int result = delegateValue(20, 10);
+            //Console.WriteLine(result);
 
-            MyClass b = new MyClass(1); // new MyClass(b:1);
-            b.printFields();
-            Console.WriteLine();
+            //TypeF delegateValue2 = Minus;
+            //int result2 = delegateValue2(20, 10);
+            //Console.WriteLine(result2);
 
-            MyClass c = new MyClass(10, 20);    // new Myclass(b:10, c:20);
-            c.printFields();
+            TypeF delegateValue = Plus;
+            delegateValue += Minus;
+            delegateValue += Multiple;
+
+            delegateValue(20, 10);
         }
     }
 }
