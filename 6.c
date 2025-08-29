@@ -1,18 +1,27 @@
-// 재귀적인 팩토리얼 함수 계산
 #include <stdio.h>
-
-long factorial(int n) {
-	printf("factorial(%d)\n", n);
-
-	if (n <= 1) return 1;	// 반복문없이 팩토리얼을 구할수 있음, 재귀함수
-	else return n * factorial(n - 1);
-}
+#define R 3
+#define COLS 3
 
 int main(void) {
-	int n = 0;
-	//long f;
+	int A[R][COLS] = { {2, 3, 0},
+					{8, 9, 1},
+					{7, 0, 5} };
+	int B[R][COLS] = { {1, 0, 0},
+					{1, 0, 0},
+					{1, 0, 0} };
+	int C[R][COLS];
 
-	printf("정수를 입력하시오:");
-	scanf("%d", &n);
-	printf("%d!은 %d입니다.\n", n, factorial(n));
+	int r, c;
+	// 두개의 행렬을 더한다.
+	for (r = 0; r < R; r++)
+		for (c = 0; c < COLS; c++)
+			C[r][c] = A[r][c] + B[r][c];
+	// 행렬을 출력한다.
+	for (r = 0; r < R; r++) {
+		for (c = 0; c < COLS; c++)
+			printf("%d ", C[r][c]);
+		printf("\n");
+	}
+
+	return 0;
 }

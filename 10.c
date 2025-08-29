@@ -1,12 +1,16 @@
 #include <stdio.h>
-#define SIZE 5
 
 int main(void) {
-	int i;
-	int scores[SIZE] = { 31, 63 };
+	int x = 10, y = 20;
+	int* p;
 
-	for (i = 0; i < SIZE; i++)
-		printf("scores[%d] = %d\n", i, scores[i]);
+	p = &x;
+	printf("p = %d\n", p);	// printf("&x = %d\n", &x);
+	printf("*p = %d\n\n", *p);
+
+	p = &y;
+	printf("p = %d\n", p);	// printf("&y = %d\n", &y);
+	printf("*p = %d\n", *p);
 
 	return 0;
 }

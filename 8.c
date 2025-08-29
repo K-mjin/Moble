@@ -1,18 +1,13 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define SIZE 5
 
 int main(void) {
-	int i;
-	int scores[SIZE];
+	int i = 10;
+	char c = 69;
+	float f = 12.3;
 
-	srand((unsigned)time(NULL));
-	for (i = 0; i < SIZE; i++)
-		scores[i] = rand() % 100;
-
-	for (i = 0; i < SIZE; i++)
-		printf("scores[%d] = %d\n", i, scores[i]);
+	printf("i狼 林家: %u\n", &i);
+	printf("c狼 林家: %u\n", &c);
+	printf("f狼 林家: %u\n", &f);
 
 	return 0;
 }

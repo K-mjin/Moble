@@ -1,20 +1,16 @@
 #include <stdio.h>
-#define STUDENTS 5
 
 int main(void) {
-	int scores[STUDENTS];
-	int sum = 0;
-	int i, average;
+	int i = 3000;
+	int* p = &i;
 
-	for (i = 0; i < STUDENTS; i++) {
-		printf("학생들의 성적을 입력하시오: ");
-		scanf("%d", &scores[i]);
-	}
-	for (i = 0; i < STUDENTS; i++)
-		sum += scores[i];
-
-	average = sum / STUDENTS;
-	printf("성적 평균 = %d\n", average);
+	printf("p = %p\n", p);		// p의 주소값
+	printf("&i = %p\n\n", &i);	// &i의 주소값
+	printf("i = %d\n", i);		// i의 값
+	printf("*p = %d\n\n", *p);		// *p에 들어가 있는 정수값
+	
+	*p = 20;
+	printf("*p = %d\n", *p);
 
 	return 0;
 }

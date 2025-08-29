@@ -1,24 +1,33 @@
-/* 무한 반복문 내에서 for문을 사용해서 계산하고자 하는 숫자의
-n제곱을 구하는 프로그램을 작성하시오. 단, 계산하고자 하는
-숫자와, n제곱은 사용자 입력을 받으며 입력받는 수는 양의 
-정수로만 사용하시오. 만약 입력된 값이 음수나 0 이 들어오면
-다시 입력 받도록 하시오.*/
-#include <stdio.h> 
+/* 2개의 정수 배열 a,b를 선언하고 배역 a의 요소를
+배열 b로 복사하는 함수를 작성하시오. */
+#include <stdio.h>
+#define SIZE 5
 
-int main() {
-	int a, b, c, i;
+// 배열을 복사하는 함수
+int array_copy(int a[], int b[], int size) {
+	int r;
+	
+	for (r = 0; r < size; r++)
+		b[r] = a[r];
+}
 
-	for (;;) {
-		printf("입력하고자 하는 n제곱의 밑수와 지수 입력 :");
-		scanf("%d %d", &a, &b);
+// 배열을 출력하는 함수
+int array_print(int a[], int size) {
+	int r;
 
-		if (a <= 0 || b <= 0)
-			continue;
-		for (i=0; i<b;i++)
+	for (r = 0; r < size; r++)
+		printf("%d", a[r]);
+	printf("\n");
+}
 
 
-		printf("%d의 %d제곱 = %c", a, b, c);
-	}
-	/*
-	*/
+int main(void) {
+	int a[SIZE] = { 1, 2, 3, 4, 5 };
+	int b[SIZE];
+
+	array_print(a, SIZE);
+	array_copy(a, b, SIZE);
+	array_print(b, SIZE);
+
+	return 0;
 }
