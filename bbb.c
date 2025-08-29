@@ -1,17 +1,33 @@
-//while 문을 이용한 구구단 출력 프로그램
+// 수학적인 조합 값을 구하는 예제
 #include <stdio.h>
 
-int main() {
-	int n;
-	int i = 1;
+int factorial(int n) {
+	int i, result = 1;
 
-	printf("출력하고 싶은 단: ");
+	for (i = 1; i <= n; i++)
+		result *= i;
+	return result;
+}
+// 팩토리얼 값을 이용해서 조합값을 계산
+int combination(int n, int r) {
+	return (factorial(n) / (factorial(r) * factorial(n - r)));
+}
+// 사용자로부터 값을 입력받아서 반환
+int get_integer(void) {
+	int n;
+	
+	printf("정수를 입력하시오: ");
 	scanf("%d", &n);
 
-	while (i <= 9) {
-		printf("%d * %d = %d \n", n, i, n * i);
-		i++;
-	}
+	return n;
+}
+
+int main(void) {
+	int a, b;
+	a = get_integer();
+	b = get_integer();
+
+	printf("c(%d, %d) = %d \n", a, b, combination(a, b));
 
 	return 0;
 }

@@ -1,29 +1,15 @@
 #include <stdio.h>
 
-int main() {
-	char op;
-	int x, y, result;
+void print_star(void) {
+	for (int i = 0; i < 30; i++)
+		printf("*");
+}
 
-	printf("수식을 입력하시오:");
-	printf("(예: 2 + 5) ");
-	printf(">> ");
-
-	scanf("%d %c %d", & x, & op, & y);
-
-	if (op == '+')
-		result = x + y;
-	else if (op == '-')
-		result = x - y;
-	else if (op == '*')
-		result = x * y;
-	else if (op == '/')
-		result = x / y;
-	else if (op == '%')
-		result = x % y;
-	else
-		printf("지원되지 않는 연산자입니다.");
-
-	printf("%d %c %d = %d", x, op, y, result);
+int main(void) {
+	print_star();
+	printf("\nHello World!\n");
+	print_star();
+	printf("\n");
 
 	return 0;
 }

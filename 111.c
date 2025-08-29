@@ -1,18 +1,11 @@
 #include <stdio.h>
 
 int main() {
-	int number;
-
-	printf("정수를 입력하시오: ");
-	scanf("%d", &number);
-
-	if (number > 0)
-		printf("양수입니다.\n");
-
-	if (number < 0)
-		printf("음수입니다\n");
-
-	printf("입력된 값은 %d입니다.\n", number);
-
+	int x, y;
+	for (y = 1; y <= 5; y++) {
+		for (x = 0; x < y; x++)
+			printf("*");
+		printf("\n");
+	}
 	return 0;
 }

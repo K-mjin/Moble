@@ -1,19 +1,21 @@
+// 소문자를 대문자로 변경한다.
 #include <stdio.h>
 
 int main() {
-	int n1, n2, n3;
+	char letter;
 
-	printf("정수를 입력하시오: ");
-	scanf("%d", &n1);
-	printf("정수를 입력하시오: ");
-	scanf("%d", &n2);
+	while (1) {
+		printf("소문자를 입력하시오: ");
+		scanf(" %c", &letter);
 
-	if (n2 == 0) {
-		printf("0으로 나눌 수는 없습니다.\n");
+		if (letter == 'Q')
+			break;
+		if (letter < 'a' || letter > 'z')
+			continue;
+
+		letter -= 32;
+		printf("변환된 대문자는 %c입니다. \n", letter);
 	}
-	else {
-		n3 = n1 / n2;
-		printf("결과는 %d입니다.\n", n3);
-	}
+
 	return 0;
 }

@@ -1,27 +1,21 @@
 #include <stdio.h>
 
-int main() {
-	double a;
-	printf("성적을 입력:");
-	scanf("%lf", &a);
+int max(int x, int y) {
+	if (x > y)
+		return x;
+	else
+		return y;
+}
 
-	int b = (int)a / 10;
+int main(void) {
+	int x, y, larger;
 
-	switch (b) {
-	case 9:
-		printf("A학점");
-		break;
-	case 8:
-		printf("B학점");
-		break;
-	case 7:
-		printf("C학점");
-		break;
-	case 6:
-		printf("D학점");
-		break;
-	default:
-		printf("F학점");
-		break;
-	}
+	printf("정수 2개를 입력하시오: ");
+	scanf("%d %d", &x, &y);
+
+	larger = max(x, y);
+
+	printf("더 큰 값은 %d입니다. \n", larger);
+
+	return 0;
 }

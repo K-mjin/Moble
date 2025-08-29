@@ -1,33 +1,24 @@
-/* 컴퓨터와 가위(1)바위(2)보(3) 게임을 하는 프로그램을
-장성하라. 컴퓨터는 사용자에게 알리지 않고 가위바위보 중에서
-임의로 하나를 선택(미리 초기화값을 적어둔다)한다. 사용자는
-프로그램의 입력 안내 메시지에 따라서 3개 중에서 하나를
-선택하게 된다. 사용자의 선택이 끝나면 컴퓨터는 누가 무엇을
-선택하였고 누가 이겼는지 비겼는지를 알려준다. */
-#include <stdio.h>
+/* 무한 반복문 내에서 for문을 사용해서 계산하고자 하는 숫자의
+n제곱을 구하는 프로그램을 작성하시오. 단, 계산하고자 하는
+숫자와, n제곱은 사용자 입력을 받으며 입력받는 수는 양의 
+정수로만 사용하시오. 만약 입력된 값이 음수나 0 이 들어오면
+다시 입력 받도록 하시오.*/
+#include <stdio.h> 
 
 int main() {
-	int com = 1;
-	int user = 0;
-	//int s = 1, r = 2, p = 3;
+	int a, b, c, i;
 
-	printf("가위바위보 중 하나를 내시오: ");
-	scanf("%d", &user);
+	for (;;) {
+		printf("입력하고자 하는 n제곱의 밑수와 지수 입력 :");
+		scanf("%d %d", &a, &b);
 
-	if (user == 1 && com == 2)
-		printf("컴퓨터가 이겼습니다. -> %d : %d", user, com);
-	else if (user == 1 && com == 3)
-		printf("사용자가 이겼습니다. -> %d : %d", user, com);
-	else if (user == 2 && com == 1)
-		printf("사용자가 이겼습니다. -> %d : %d", user, com);
-	else if (user == 2 && com == 3)
-		printf(" 컴퓨터가 이겼습니다. -> %d : %d", user, com);
-	else if (user == 3 && com == 1)
-		printf("사용자가 이겼습니다. -> %d : %d", user, com);
-	else if (user == 3 && com == 2)
-		printf("컴퓨터가 이겼습니다. -> %d : %d", user, com);
-	else
-		printf("비겼습니다");
+		if (a <= 0 || b <= 0)
+			continue;
+		for (i=0; i<b;i++)
 
-	return 0;
+
+		printf("%d의 %d제곱 = %c", a, b, c);
+	}
+	/*
+	*/
 }

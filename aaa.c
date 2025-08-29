@@ -1,33 +1,24 @@
 #include <stdio.h>
 
-int main() {
-	char op;
-	int x, y;
+int get_integer() {
+	int value;
+	
+	printf("정수를 입력하시오: ");
+	scanf("%d", &value);
 
-	printf("수식을 입력하시오: \n");
-	printf("(예: 2+5) \n");
-	printf(">> ");
-	scanf("%d %c %d", &x, &op, &y);
+	return value;
+}
 
-	switch(op) {
-		case '+':
-			printf("%d %c %d = %d \n", x, op, y, x + y);
-			break;
-		case '-':
-			printf("%d %c %d = %d \n", x, op, y, x - y);
-			break;
-		case '*':
-			printf("%d %c %d = %d \n", x, op, y, x * y);
-			break;
-		case '/':
-			printf("%d %c %d = %d \n", x, op, y, x / y);
-			break;
-		case '+%':
-			printf("%d %c %d = %d \n", x, op, y, x % y);
-			break;
-		default:
-			printf("지원되지 않는 연산자입니다. \n");
-			break;
-	}
+int add(int x, int y) {
+	return x + y;
+}
+
+int main(void) {
+	int x = get_integer();
+	int y = get_integer();
+
+	int sum = add(x, y);
+	printf("두 수의 합은 %d입니다. \n", sum);
+
 	return 0;
 }
