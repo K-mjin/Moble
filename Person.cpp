@@ -1,39 +1,48 @@
 #include <iostream>
-#include<cstring>
 using namespace std;
 
-class Person {
-	char* name;
-	int age;
+class Member {
+private:
+	char gender[5];
+	char name[30];
+	char phone[30];
 
 public:
-	Person() {
-		int len = strlen("이름 없음");
-		name = new char[len + 1];
-		strcpy(name, "이름 없음");
-		age = 0;
+	Member(const char* gender, const char* name, const char* phone) {
+		strcpy(this->gender, gender);
+		strcpy(this->name, name);
+		strcpy(this->phone, phone);
 	}
-	Person(const char* myname, int myage) {
-		int len = myage;
-		this->name = new char[len + 1];
-		strcpy(name, myname);
-		this->age = myage;
-	}
-	~Person() {
-		delete[] name;
-	}
-	void ShowPersonInfo() {
-		cout << "이름 : " << name << " 나이 : " << age << endl;
+	char* GetInfoStr() {
+		char member[100];
+		strcat(member, gender);
+		strcat(member, name);
+		strcat(member, phone);
+		return member;
 	}
 };
-void testPerson() {
-	Person p;
-	p.ShowPersonInfo();
 
-	Person p1("김미진", 23);
-	p1.ShowPersonInfo();
-}
+class Student : public Member {
+public:
+	char major[50];
+	Student(const char* gender, const char* name, const char* phone, const char* major) : Member(gender, name, phone) {
+		strcpy(this->major, major);
+	}
+	char* GetInfoStr() {
+		char member[100];
+		strcat(member, major);
+		Member::GetInfoStr();
+	}
+};
 
-int main(void) {
-	testPerson();
-}
+class Professor : public Member {
+public:
+	char subject[50];
+	int career;
+	Professor(const char* gender, const char* name, const char* phone, const char* subject, int career) : Member(gender, name, phone) {
+		strcpy(this->subject, subject);
+		char c[50];
+		itoa(career, c, 10);
+		
+	}
+};
