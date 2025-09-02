@@ -1,18 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
+void swap(int *x, int *y);
 
 int main(void) {
-	char s1[] = "100";
-	char s2[] = "12.93";
-	char buffer[100];
-	int i;
-	double d, result;
+	int a = 100, b = 200;
+	printf("a = %d b = %d\n", a, b);
 
-	i = atoi(s1);	// 문자열 "100"을 int형으로 변환하여 i에 저장
-	d = atof(s2);
-	result = i + d;
+	swap(&a, &b);
 
-	sprintf(buffer, "%lf", result);
-	printf("연산 결과는 %s입니다. \n", buffer);
+	printf("a = %d b = %d\n", a, b);
+
 	return 0;
+}
+
+void swap(int *x, int *y) {
+	int temp;
+
+	temp = *x;
+	*x = *y;
+	*y = temp;
 }

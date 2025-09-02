@@ -1,17 +1,21 @@
 #include <stdio.h>
+#define SIZE 5
 
-void round(double f) {
-	double d = f + 0.5;
-	printf("%d", (int)d);
-}
+int main() {
+	int i;
+	int scores[SIZE];
+	int sum = 0;
+	int mean;
 
-int round1(double f) {
-	double d = f + 0.5;
-	return d;
-}
+	for (i = 0; i < SIZE; i++) {
+		printf("학생들의 성적을 입력하시오 : ");
+		scanf("%d", &scores[i]);
+	}
 
-int main(void) {
-	//round(6.99);
-	printf("%d", (int)round1(6.99));
+	for (i = 0; i < SIZE; i++) {
+		sum += scores[i];
+	}
+	mean = sum / SIZE;
+	printf("성적 평균 = %d\n", mean);
 	return 0;
 }

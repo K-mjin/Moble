@@ -1,27 +1,22 @@
 #include <stdio.h>
-
-struct vector {
-	float x;
-	float y;
-};
-
-struct vector get_vector_sum(struct vector a, struct vector b);
+#include <stdlib.h>
+#include <time.h>
+#define ROWS 3
+#define COLS 5
 
 int main(void) {
-	struct vector a = { 2.0, 3.0 };
-	struct vector b = { 5.0, 6.0 };
-	struct vector sum;
+	int s[ROWS][COLS];
+	int i, j;
+	srand((unsigned)time(NULL));
 
-	sum = get_vector_sum(a, b);
-	printf("벡터의 합은 (%f, %f)입니다.\n", sum.x, sum.y);
+	for (i = 0; i < ROWS; i++)
+		for (j = 0; j < COLS; j++)
+			s[i][j] = rand() % 100;
 
+	for (i = 0; i < ROWS; i++) {
+		for (j = 0; j < COLS; j++)
+			printf("% 02d", s[i][j]);
+		printf("\n");
+	}
 	return 0;
-}
-
-struct vector get_vector_sum(struct vector a, struct vector b) {
-	struct vector result;
-	result.x = a.x + b.x;
-	result.y = a.y + b.y;
-
-	return result;
 }

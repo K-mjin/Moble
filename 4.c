@@ -1,14 +1,19 @@
 #include <stdio.h>
-#include <math.h>
-
-double sin_degree(double degree) {
-	return sin((3.141592 * degree) / 180.0);
-}
+#include <stdlib.h>
+#define SIZE 6
 
 int main(void) {
-	int degree;
-	for (degree = 0; degree <= 180; degree += 10) {
-		printf("degree : %d, sin : %lf \n", degree, sin_degree(degree));
-	}
+	int freq[SIZE] = { 0 };
+	int i;
+
+	for (i = 0; i < 1000; i++)
+		++freq[rand() % 6];
+
+	printf("=================\n");
+	printf("¼ýÀÚ       ºóµµ          \n");
+	printf("=================\n");
+
+	for (i = 0; i < SIZE; i++)
+		printf("%3d       %3d \n", i+1, freq[i]);
 	return 0;
 }

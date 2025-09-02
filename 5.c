@@ -1,35 +1,38 @@
 #include <stdio.h>
-#include <time.h>
+#define SEAT 10
 
-int roll_dice() 
-{
-	int sum = 0;
-	int a = (rand() % 6) + 1;
-	for (int i = 0; i < 3; i++) {
-		printf("%d : %d \n", i+1,  a);
-		sum += a;
+int main(void) {
+	char ans1;
+	int ans2; // 예약 확인 물음, 좌석 선택 물음
+	int seats[SEAT] = { 0 };
+	int i;
+
+	while (1) {
+		printf("좌석을 예약하시겠습니까? (y 또는 n) ");
+		scanf(" %c", &ans1);
+
+		if (ans1 == 'y') {
+			printf("----------------------------\n");
+			printf("1 2 3 4 5 6 7 8 9 10 \n");
+			printf("----------------------------\n");
+			for (i = 0; i < SEAT; i++) {
+				printf("%d ", seats[i]);
+			}
+			printf("\n");
+
+			printf("몇 번째 좌석을 예약하시겠습니까? ");
+			scanf("%d", &ans2);
+
+			if (seats[ans2 - 1] == 0) {
+				seats[ans2 - 1] = 1;
+				printf("예약되었습니다.\n");
+			}
+			else
+				printf("이미 예약된 자리입니다.\n");
+		}
+		else if (ans1 == 'n')
+			break;
+		else
+			printf("다시 선택하세요.\n");
 	}
-	printf("총 합 : %d \n", sum);
-	return sum;
-}
-
-void roll_result(int x, int y) {
-	if (x > y)
-		printf("플레이어 승리!");
-	else if (x < y)
-		printf("컴퓨터 승리!");
-	else
-		printf("비겼습니다~");
-}
-
-int main(void) 
-{
-	srand((unsigned)time(NULL));
-	int user, computer;
-	user = roll_dice();
-	computer = roll_dice();
-
-	roll_result(user, computer);
-	
-	return 0;
 }
