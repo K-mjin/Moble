@@ -1,58 +1,23 @@
+#include <opencv2/opencv.hpp>
 #include <iostream>
+
+using namespace cv;
 using namespace std;
 
-// 1
-//class Person {
-//private:
-//	char* name;
-//	int age;
-//public:
-//	Person(const char* name, int age) {
-//		int len = strlen(name);
-//		char* name = new char[len];
-//		strcpy(this->name, name);
-//		this->age = age;
-//	}
-//};
-
-// 3
-//int Adder(int a, int b = 2) {
-//	return a + b;
-//}
-//int testAdder(void) {
-//	cout << Adder(5) << endl;
-//	cout << Adder(3, 5) << endl;
-//	return 0;
-//}
+// 6번
 //int main() {
-//	testAdder();
-//}
-
-// 5
-//class MyCar {
-//private:
-//	int dorNum;
-//	char color[30];
-//public:
-//	MyCar(int dorNum, const char* str) {
-//		this->dorNum = dorNum;
-//		strcpy(color, str);
-//	}
-//	MyCar() {
-//		dorNum = 4;
-//		strcpy(color, "white");
-//	}
-//	void showCarInfo() {
-//		cout << "문 개수 : " << dorNum << ", 자동차 색깔 : " << color << endl;
-//	}
-//};
-//void test() {
-//	MyCar c1(3, "red");
-//	MyCar c2;
+//	Mat img_color;
+//	img_color = imread("cat on laptop.jpg", IMREAD_GRAYSCALE);
+//	imshow("Original", img_color);
 //
-//	c1.showCarInfo();
-//	c2.showCarInfo();
+//	Mat img_sub1 = img_color;
+//	Mat img_sub2 = img_color;
+//
+//	threshold(img_color, img_color, 100, 255, THRESH_BINARY);
+//
+//	imshow("img_sub1", img_sub1);
+//	imshow("img_sub2", img_sub2);
+//	waitKey();
 //}
-//int main() {
-//	test();
-//}
+
+// 7번
