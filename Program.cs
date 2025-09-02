@@ -1,33 +1,17 @@
-﻿using System;
-
-namespace ConsoleApp_0724
+namespace WinFormsApp_0725
 {
-    class Program
+    internal static class Program
     {
-        delegate void TypeF(int a, int b);
-
-        //static int Plus (int x, int y) {  return x + y; }
-        //static int Minus(int x, int y) { return x - y; }
-
-        static void Plus( int x, int y) {  Console.WriteLine(x + y); }
-        static void Minus(int x, int y) { Console.WriteLine(x - y); }
-        static void Multiple(int x, int y) { Console.WriteLine(x * y); }
-
-        static void Main(string[] args)
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            //TypeF delegateValue = new TypeF(Plus);
-            //int result = delegateValue(20, 10);
-            //Console.WriteLine(result);
-
-            //TypeF delegateValue2 = Minus;
-            //int result2 = delegateValue2(20, 10);
-            //Console.WriteLine(result2);
-
-            TypeF delegateValue = Plus;
-            delegateValue += Minus;
-            delegateValue += Multiple;
-
-            delegateValue(20, 10);
+            // To customize application configuration such as set high DPI settings or default font,
+            // see https://aka.ms/applicationconfiguration.
+            ApplicationConfiguration.Initialize();
+            Application.Run(new Form9());
         }
     }
 }
