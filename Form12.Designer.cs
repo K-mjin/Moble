@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp_0728
 {
-    partial class Form9
+    partial class Form12
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form12));
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // listView1
+            // pictureBox1
             // 
-            listView1.Location = new Point(24, 34);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(619, 338);
-            listView1.Sorting = SortOrder.Ascending;
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(31, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(309, 373);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
-            // Form9
+            // Form12
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(listView1);
-            Name = "Form9";
-            Text = "Form9";
-            Load += Form9_Load;
+            Controls.Add(pictureBox1);
+            Name = "Form12";
+            Text = "Form12";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ListView listView1;
+        private PictureBox pictureBox1;
     }
 }

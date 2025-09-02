@@ -10,16 +10,19 @@ using System.Windows.Forms;
 
 namespace WinFormsApp_0728
 {
-    public partial class Form4 : Form
+    public partial class Form14 : Form
     {
-        public Form4()
+        public Form14()
         {
             InitializeComponent();
         }
 
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void Form14_Paint(object sender, PaintEventArgs e)
         {
-            label1.Text = hScrollBar1.Value.ToString();
+            imageList1.Draw(e.Graphics, 0, 0, 0);
+            imageList1.Draw(e.Graphics, 70, 0, 1);
+            imageList1.Draw(e.Graphics, 280, 0, 2);
+
         }
     }
 }

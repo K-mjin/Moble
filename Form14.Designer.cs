@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp_0728
 {
-    partial class Form9
+    partial class Form14
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form14));
+            imageList1 = new ImageList(components);
             SuspendLayout();
             // 
-            // listView1
+            // imageList1
             // 
-            listView1.Location = new Point(24, 34);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(619, 338);
-            listView1.Sorting = SortOrder.Ascending;
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            imageList1.ColorDepth = ColorDepth.Depth24Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "1.jpg");
+            imageList1.Images.SetKeyName(1, "2.jpg");
+            imageList1.Images.SetKeyName(2, "2.jpg");
             // 
-            // Form9
+            // Form14
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(listView1);
-            Name = "Form9";
-            Text = "Form9";
-            Load += Form9_Load;
+            Name = "Form14";
+            Text = "Form14";
+            Paint += Form14_Paint;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ListView listView1;
+        private ImageList imageList1;
     }
 }

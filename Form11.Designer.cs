@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp_0725
+﻿namespace WinFormsApp_0728
 {
     partial class Form11
     {
@@ -28,57 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
-            btnPass = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            treeView1 = new TreeView();
+            button4 = new Button();
             SuspendLayout();
             // 
-            // label1
+            // button1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(224, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(131, 15);
-            label1.TabIndex = 0;
-            label1.Text = "비밀번호를 입력하세요";
+            button1.Location = new Point(508, 26);
+            button1.Name = "button1";
+            button1.Size = new Size(127, 60);
+            button1.TabIndex = 0;
+            button1.Text = "클릭";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // textBox1
+            // button2
             // 
-            textBox1.Location = new Point(229, 98);
-            textBox1.MaxLength = 5;
-            textBox1.Name = "textBox1";
-            textBox1.PasswordChar = '*';
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 1;
+            button2.Location = new Point(508, 128);
+            button2.Name = "button2";
+            button2.Size = new Size(127, 60);
+            button2.TabIndex = 1;
+            button2.Text = "확장";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // btnPass
+            // button3
             // 
-            btnPass.Location = new Point(271, 175);
-            btnPass.Name = "btnPass";
-            btnPass.Size = new Size(75, 23);
-            btnPass.TabIndex = 2;
-            btnPass.Text = "클릭";
-            btnPass.UseVisualStyleBackColor = true;
-            btnPass.Click += btnPass_Click;
+            button3.Location = new Point(508, 236);
+            button3.Name = "button3";
+            button3.Size = new Size(127, 60);
+            button3.TabIndex = 2;
+            button3.Text = "축소";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // treeView1
+            // 
+            treeView1.Location = new Point(12, 12);
+            treeView1.Name = "treeView1";
+            treeView1.Size = new Size(429, 426);
+            treeView1.TabIndex = 3;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(508, 329);
+            button4.Name = "button4";
+            button4.Size = new Size(127, 60);
+            button4.TabIndex = 4;
+            button4.Text = "삭제";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Form11
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(574, 390);
-            Controls.Add(btnPass);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            ClientSize = new Size(800, 450);
+            Controls.Add(button4);
+            Controls.Add(treeView1);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Name = "Form11";
             Text = "Form11";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private TextBox textBox1;
-        private Button btnPass;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private TreeView treeView1;
+        private Button button4;
     }
 }

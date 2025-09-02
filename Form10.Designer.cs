@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp_0725
+﻿namespace WinFormsApp_0728
 {
     partial class Form10
     {
@@ -28,119 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            TreeNode treeNode1 = new TreeNode("IT도서");
+            treeView1 = new TreeView();
+            tbNode = new TextBox();
+            btnAdd = new Button();
+            btnDelete = new Button();
+            btnExpandAll = new Button();
+            btnCollapseAll = new Button();
             SuspendLayout();
             // 
-            // label1
+            // treeView1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("맑은 고딕", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(59, 41);
-            label1.Name = "label1";
-            label1.Size = new Size(42, 17);
-            label1.TabIndex = 0;
-            label1.Text = "C언어";
+            treeView1.Location = new Point(12, 12);
+            treeView1.Name = "treeView1";
+            treeNode1.Name = "Root";
+            treeNode1.Text = "IT도서";
+            treeView1.Nodes.AddRange(new TreeNode[] { treeNode1 });
+            treeView1.Size = new Size(493, 426);
+            treeView1.TabIndex = 0;
             // 
-            // label2
+            // tbNode
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(55, 84);
-            label2.Name = "label2";
-            label2.Size = new Size(55, 15);
-            label2.TabIndex = 1;
-            label2.Text = "C++언어";
+            tbNode.Location = new Point(531, 12);
+            tbNode.Name = "tbNode";
+            tbNode.Size = new Size(138, 23);
+            tbNode.TabIndex = 1;
             // 
-            // label3
+            // btnAdd
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(55, 115);
-            label3.Name = "label3";
-            label3.Size = new Size(46, 15);
-            label3.TabIndex = 2;
-            label3.Text = "C#언어";
+            btnAdd.Location = new Point(531, 53);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(138, 42);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "추가";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
-            // label4
+            // btnDelete
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(55, 148);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 3;
-            label4.Text = "평균점수";
+            btnDelete.Location = new Point(531, 118);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(138, 42);
+            btnDelete.TabIndex = 2;
+            btnDelete.Text = "삭제";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // textBox1
+            // btnExpandAll
             // 
-            textBox1.Location = new Point(158, 39);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 4;
+            btnExpandAll.Location = new Point(531, 197);
+            btnExpandAll.Name = "btnExpandAll";
+            btnExpandAll.Size = new Size(138, 42);
+            btnExpandAll.TabIndex = 2;
+            btnExpandAll.Text = "확장";
+            btnExpandAll.UseVisualStyleBackColor = true;
+            btnExpandAll.Click += btnExpandAll_Click;
             // 
-            // textBox2
+            // btnCollapseAll
             // 
-            textBox2.Location = new Point(158, 80);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(158, 115);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            textBox4.Enabled = false;
-            textBox4.Location = new Point(158, 144);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 4;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(69, 202);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "결과보기";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(169, 202);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 5;
-            button2.Text = "지우기";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnCollapseAll.Location = new Point(531, 266);
+            btnCollapseAll.Name = "btnCollapseAll";
+            btnCollapseAll.Size = new Size(138, 42);
+            btnCollapseAll.TabIndex = 2;
+            btnCollapseAll.Text = "축소";
+            btnCollapseAll.UseVisualStyleBackColor = true;
+            btnCollapseAll.Click += btnCollapseAll_Click;
             // 
             // Form10
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(523, 463);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnCollapseAll);
+            Controls.Add(btnExpandAll);
+            Controls.Add(btnDelete);
+            Controls.Add(btnAdd);
+            Controls.Add(tbNode);
+            Controls.Add(treeView1);
             Name = "Form10";
             Text = "Form10";
             ResumeLayout(false);
@@ -149,15 +113,11 @@
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Button button1;
-        private Button button2;
+        private TreeView treeView1;
+        private TextBox tbNode;
+        private Button btnAdd;
+        private Button btnDelete;
+        private Button btnExpandAll;
+        private Button btnCollapseAll;
     }
 }

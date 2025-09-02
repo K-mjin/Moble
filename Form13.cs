@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace WinFormsApp_0728
 {
-    public partial class Form4 : Form
+    public partial class Form13 : Form
     {
-        public Form4()
+        public Form13()
         {
             InitializeComponent();
         }
 
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
         {
-            label1.Text = hScrollBar1.Value.ToString();
+            pictureBox2.Image = null;
+        }
+
+        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            pictureBox2.Image = pictureBox1.Image;
         }
     }
 }

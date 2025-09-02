@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp_0725
+namespace WinFormsApp_0728
 {
     public partial class Form7 : Form
     {
@@ -16,13 +16,15 @@ namespace WinFormsApp_0725
         {
             InitializeComponent();
         }
-
-        private void button1_MouseUp(object sender, MouseEventArgs e)
+        private void Form7_Load(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
-                MessageBox.Show("오른쪽 클릭");
-            if (e.Button == MouseButtons.Left)
-                MessageBox.Show("왼쪽 클릭");
+            dateTimePicker1.Format = DateTimePickerFormat.Long;
         }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = dateTimePicker1.Value.ToLongDateString();
+        }
+
+        
     }
 }

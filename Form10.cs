@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp_0725
+namespace WinFormsApp_0728
 {
     public partial class Form10 : Form
     {
@@ -17,21 +17,42 @@ namespace WinFormsApp_0725
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            double num1 = double.Parse(textBox1.Text);
-            double num2 = double.Parse(textBox2.Text);
-            double num3 = double.Parse(textBox3.Text);
-            double result = (num1 + num2 + num3) / 3;
-            textBox4.Text = string.Format("{0:0.0}", result);
+            if(tbNode.Text == "")
+            {
+                MessageBox.Show("텍스트 박스에 입력하세요.");
+                return;
+            }
+
+            if (treeView1.SelectedNode != null)
+            {
+                treeView1.SelectedNode.Nodes.Add(tbNode.Text);
+                tbNode.Text = "";
+            }
+            else
+            {
+                treeView1.Nodes.Add(tbNode.Text);
+                tbNode.Text = "";
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
+            if ( treeView1.SelectedNode != null)
+            {
+                treeView1.SelectedNode.Remove();
+            }
+        }
+
+        private void btnExpandAll_Click(object sender, EventArgs e)
+        {
+            treeView1.ExpandAll();
+        }
+
+        private void btnCollapseAll_Click(object sender, EventArgs e)
+        {
+            treeView1.CollapseAll();
         }
     }
 }
