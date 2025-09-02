@@ -1,9 +1,17 @@
 #include <stdio.h>
 
-int main(void) {
-	printf("안녕하세요?\n");
-	printf("이번 코드에는 많은 오류가 있다네요\n");
-	printf("제가 다 고쳐보겠습니다.\n");
+void round(double f) {
+	double d = f + 0.5;
+	printf("%d", (int)d);
+}
 
+int round1(double f) {
+	double d = f + 0.5;
+	return d;
+}
+
+int main(void) {
+	//round(6.99);
+	printf("%d", (int)round1(6.99));
 	return 0;
 }

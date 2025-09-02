@@ -1,22 +1,46 @@
-// 이중 포인터 프로그램.
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int main(void) {
-	int i = 100;
-	int* p = &i;
-	int** q = &p;
+int add(int a, int b) {
+	int sum;
+	sum = a + b;
+	return sum;
+}
 
-	*p = 200;
-	printf("i = %d  *p = %d  **q = %d\n", i, *p, **q);
+int max(int x, int y) {
+	if (x > y)
+		return x;
+	else if (x < y)
+		return y;
+	printf("%d %d", x, y);
+}
 
-	**q = 300;
-	printf("i = %d  *p = %d  **q = %d\n", i, *p, **q);
+int min(int x, int y) {
+	if (x > y)
+		return y;
+	else if (x < y)
+		return x;
+}
 
-	printf("주소값 i = %u  p = %u \n", &i, p);
-	// i의 주소와 포인터변수 p가 저장하고 있는 주소값(같다)
-	printf("주소값 p = %u  q = %u \n", &p, q);
-	// p의 주소와 이중포인터변수 q가 저장하고 있는 주소값(같다)
-	printf("주소값 q = %u \n", &q);
-	// q의 주소값 확인
+int get_int() {
+	int a;
+	printf("정수를 입력하시오. \n");
+	scanf("%d", &a);
+	return a;
+}
+
+int main() {
+	int a, b;
+	a = get_int();
+	b = get_int();
+	int s = max(a, b);
+	printf("합: %d\n", add(a, b));
+	printf("최대값 : %d\n", max(a, b));
+	printf("최솟값 : %d\n", min(a, b));
 	return 0;
 }
+	
+
+
+	
+
