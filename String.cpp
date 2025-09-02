@@ -1,79 +1,31 @@
+#include <opencv2/opencv.hpp>
 #include <iostream>
-#include <string>
+using namespace cv;
 using namespace std;
 
-// 1. 문자열 연결
-void concatStrings() {
-	string str1 = "Hello";
-	string str2 = " World";
-	string result = str1 + str2;
-	cout << result << endl;	// Hello World
-	
-	str1 += str2;	// Hello World
-	cout << str1 << endl;
-}
-
-// 2. 문자열의 길이
-void stringLength() {
-	string str = "Hello";
-	cout << str.length() << endl;	// 5
-	cout << str.size() << endl;	// 5
-}
-
-// 3. 문자 접근
-void accessChars() {
-	string str = "Hello";
-	cout << str[0] << endl;	// 'H'
-	cout << str.at(1) << endl;	// 'e'
-}
-
-// 4. 부분 문자열
-void substringExample() {
-	string str = "Hello, World!";
-	string sub = str.substr(7, 5);		// "World"
-	cout << sub << endl;
-}
-
-// 5. 문자열 비교
-void compareString() {
-	string str1 = "apple";
-	string str2 = "banana";
-	string str3 = "apple";
-
-	if (str1 < str2) {		// 사전순으로 비교
-		cout << "apple이 banana보다 앞에 있음" << endl;
-	}
-	if (str1.compare(str2) < 0) {
-		cout << "apple이 banana보다 앞에 있음" << endl;
-	}
-	if (str1.compare(str3) == 0) {
-		cout << str1 << "과 " << str3 << "는 동일한 문자" << endl;
-	}
-}
-
-// 6. 문자열 삽입 및 삭제
-void insertAndErase() {
-	string str = "Hello";
-	str.insert(5, ", World");	// "Hello, World"
-	cout << str << endl;
-	str.erase(5, 7);	// "Hello"
-	cout << str << endl;
-}
-
-// 7. 문자열 찾기
-void findString() {
-	string str = "Hello, Hello!";
-	int pos = str.find("Hello");
-	cout << pos << endl;
-}
-
 int main() {
-	concatStrings();
-	stringLength();
-	accessChars();
-	substringExample();
-	compareString();
-	insertAndErase();
-	findString();
-	return 0;
+	const char* str = "Open Source Computer Vision";
+	String str1("Helll World");
+	String str2(str, str + 11);
+	String str3 = "Software Engineer";
+
+	cout << "str1 : " << str1 << endl << "str2 : " << str2 << endl << "str3 : " << str3 << endl << endl;
+
+	cout << "*str1.begin() : " << *str1.begin() << endl;
+	cout << "str1[1] : " << str1[1] << endl;
+	cout << "*(str1.end()-1) : " << *(str1.end() - 1) << endl << endl;
+	
+	cout << "str2.size() : " << str2.size() << endl;
+	cout << "str2.length() : " << str2.length() << endl;
+	cout << "str2.empty() : " << str2.empty() << endl;
+	cout << "str3.find(\"ng\") : " << str3.find("ng") << endl << endl;
+
+	cout << "format(\"%s %d\" , str3.c_str(), 100) : " << format("%s %d", str3.c_str(), 100) << endl << endl;
+
+	str1.swap(str3);
+	cout << "str1.swap(str3)" << endl;
+	cout << "- str1 : " << str1 << endl << "- str3 : " << str3 << endl;
+	str1.clear();
+	cout << "str1.clear()" << endl;
+	cout << "- str1 : " << endl;
 }
