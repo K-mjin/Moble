@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxWMPLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp_0728
+namespace WinFormsApp_0729
 {
     public partial class Form4 : Form
     {
@@ -17,9 +18,13 @@ namespace WinFormsApp_0728
             InitializeComponent();
         }
 
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void Form4_Load(object sender, EventArgs e)
         {
-            label1.Text = hScrollBar1.Value.ToString();
+            PlayBackgroundMusic(@"바비 킴-02-일년을 하루같이.mp3");
+        }
+        private void PlayBackgroundMusic(string filePath)
+        {
+            axWindowsMediaPlayer1.settings.autoStart = true;
         }
     }
 }

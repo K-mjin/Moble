@@ -1,4 +1,4 @@
-namespace WinFormsApp_0728
+namespace WinFormsApp_new_0729
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace WinFormsApp_0728
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form14());
+            Application.Run(new Form3());
         }
     }
 }

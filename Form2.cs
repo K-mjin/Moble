@@ -6,10 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 using System.Windows.Forms;
 
-namespace WinFormsApp_0728
+namespace WinFormsApp_new_0729
 {
     public partial class Form2 : Form
     {
@@ -17,25 +16,21 @@ namespace WinFormsApp_0728
         {
             InitializeComponent();
         }
-        public Form2(string data)
-        {
-            InitializeComponent();
-            textBox1.Text = data;
-        }
-        public string TextBox1
-        {
-            set { textBox1.Text = value; }
-        }   // 속성을 추가해서 문자열 받기
-        
-        //public void UpdateData(string data)
-        //{
-        //    textBox1.Text = data;
-        //} // 메서드를 만들어서 문자열로 연결
 
-        private void button1_Click(object sender, EventArgs e)
+        private void toolStripCopy_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(this);
-            form3.Show();
+            lbResult.Text = "복사되었습니다.";
+        }
+
+        private void toolStripPaste_Click(object sender, EventArgs e)
+        {
+            lbResult.Text = "붙여넣기 되었습니다.";
+        }
+
+        private void toolStripCut_Click(object sender, EventArgs e)
+        {
+            lbResult.Text = "잘라내기 되었습니다.";
+            //MessageBox.Show("잘라내기 되었습니다.");
         }
     }
 }

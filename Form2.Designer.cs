@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp_0728
+﻿namespace WinFormsApp_new_0729
 {
     partial class Form2
     {
@@ -28,55 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            components = new System.ComponentModel.Container();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            toolStripCopy = new ToolStripMenuItem();
+            toolStripPaste = new ToolStripMenuItem();
+            toolStripCut = new ToolStripMenuItem();
+            lbResult = new Label();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // contextMenuStrip1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 56);
-            label1.Name = "label1";
-            label1.Size = new Size(31, 15);
-            label1.TabIndex = 0;
-            label1.Text = "주소";
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripCopy, toolStripPaste, toolStripCut });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(181, 92);
             // 
-            // textBox1
+            // toolStripCopy
             // 
-            textBox1.Location = new Point(49, 56);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(429, 23);
-            textBox1.TabIndex = 1;
+            toolStripCopy.Name = "toolStripCopy";
+            toolStripCopy.Size = new Size(180, 22);
+            toolStripCopy.Text = "복사";
+            toolStripCopy.Click += toolStripCopy_Click;
             // 
-            // button1
+            // toolStripPaste
             // 
-            button1.Location = new Point(484, 56);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "주소검색";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            toolStripPaste.Name = "toolStripPaste";
+            toolStripPaste.Size = new Size(180, 22);
+            toolStripPaste.Text = "붙여넣기";
+            toolStripPaste.Click += toolStripPaste_Click;
+            // 
+            // toolStripCut
+            // 
+            toolStripCut.Name = "toolStripCut";
+            toolStripCut.Size = new Size(180, 22);
+            toolStripCut.Text = "잘라내기";
+            toolStripCut.Click += toolStripCut_Click;
+            // 
+            // lbResult
+            // 
+            lbResult.AutoSize = true;
+            lbResult.Location = new Point(52, 148);
+            lbResult.Name = "lbResult";
+            lbResult.Size = new Size(107, 15);
+            lbResult.TabIndex = 1;
+            lbResult.Text = "결과를 출력합니다";
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(581, 350);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            ClientSize = new Size(800, 450);
+            ContextMenuStrip = contextMenuStrip1;
+            Controls.Add(lbResult);
             Name = "Form2";
             Text = "Form2";
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private TextBox textBox1;
-        private Button button1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem toolStripCopy;
+        private ToolStripMenuItem toolStripPaste;
+        private ToolStripMenuItem toolStripCut;
+        private Label lbResult;
     }
 }

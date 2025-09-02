@@ -1,90 +1,57 @@
-﻿using System;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-public class Class1
-{
-	public Class1()
-	{
-	}
-}
+//namespace WinFormsApp_new_0729
+//{
+//    internal class Class1 : Form
+//    {
+//        MenuStrip menuStrip = new MenuStrip();
 
-namespace ConsoleApp_0716
-{
-    internal class Program_1
-    {
-    static void Main(string[] args)
-        {
-            //Console.WriteLine("다이아몬드의 높이를 입력하시오");
-            //int height = int.Parse(Console.ReadLine());
+//        public Class1()
+//        {
+//            this.Text = "MenuStrip - 파일 생성 예제";
+//            this.Width = 800;
+//            this.Height = 700;
 
-            //for (int i = 0; i < height / 2 + 1; i++)
-            //{
-            //    for (int j = 0; j < height / 2 + 1; j++)
-            //    {
-            //        Console.Write(i + j >= height / 2 ? "*" : " ");
-            //    }
-            //    for (int j = 0; j < height / 2; j++)
-            //    {
-            //        Console.Write(i - j > 0 ? "*" : " ");
-            //    }
-            //    Console.WriteLine();
-            //}
-            //for (int i = 0; i < height / 2; ++i)
-            //{
-            //    for (int j = 0; j < height / 2 + 1; j++)
-            //    {
-            //        Console.Write(i - j >= 0 ? " " : "*");
-            //    }
-            //    for (int j = 0; j <= height / 2; j++)
-            //    {
-            //        Console.Write(i + j >= height / 2 - 1 ? " " : "*");
-            //    }
-            //    Console.WriteLine();
-            //}
+//            ToolStripMenuItem fileMenu = new ToolStripMenuItem("File");
+//            ToolStripMenuItem newItem = new ToolStripMenuItem("New");
+//            newItem.Click += (s, e) =>
+//            {
+//                string folderPath = @"C:\Temp";
+//                try
+//                {
+//                    if (!Directory.Exists(folderPath))
+//                        Directory.CreateDirectory(folderPath);
+//                    string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+//                    string fileName = $"NewFile_{timestamp}.txt";
+//                    string filePath = Path.Combine(folderPath, fileName);
 
-            // 다이아몬드 출력
-            //Console.WriteLine("다이아몬드의 높이를 입력하시오");
-            //int num = int.Parse(Console.ReadLine());
-            //int space = num / 2;    // space는 공백의 개수
+//                    File.Create(filePath).Close();
+//                    MessageBox.Show($"파일이 생성되었습니다:\n{filePath}", "성공");
+//                }
+//                catch (Exception ex)
+//                {
+//                    MessageBox.Show("오류발생 : " + ex.Message, "에러");
+//                }
+//            };
+//            fileMenu.DropDownItems.Add(newItem);
 
-            //// 상단 피라미드
-            //for (int i = 1; i <= num/2 + 1; i++)
-            //{ 
-            //    for (int j = 1; j <= space; j++)
-            //    {
-            //        Console.Write(" "); // *이 1개에서 3개, 5개.. 늘어나는 것 처럼 공백 space개를 출력하라는 의미(j++는 그 줄 안에서 공백을 몇개 출력할지 세는 것)
-            //    }
-            //    for (int k = 1; k <= 2 * i - 1; k++)
-            //    {
-            //        Console.Write("*");
-            //    }
-            //    Console.WriteLine();
+//            menuStrip.Items.Add(fileMenu);
 
-            //    space--;    // 줄이 바뀔 때마다 space가 줄어듬
-            //}
-            //// 공백이 1 ~ space개 까지 출력
-            //// space--;
-            //// 공백이 1 ~ space - 1개 까지 출력
-            //// space--;
-            //// 공백이 1 ~ space - 2개 까지 출력
+//            this.MainMenuStrip = menuStrip;
 
-            //// 하단 피라미드
-            //space = 1;
-            //for (int i = num / 2; i >= 1; i--)
-            //{
-            //    for (int j = 1; j <= space; j++)
-            //    {
-            //        Console.Write(" ");
-            //    }
-            //    for (int k = 1; k <= 2 * i - 1; k++)
-            //    {
-            //        Console.Write("*");
-            //    }
-            //    Console.WriteLine();
+//            this.Controls.Add(menuStrip);
+//        }
+//        public static void Main()
+//        {
+//            Application.EnableVisualStyles();
 
-            //    space++;
-            //}
+//            Application.SetCompatibleTextRenderingDefault(false);
 
-
-        }
-    }
-}
+//            Application.Run(new Class1());
+//        }
+//    }
+//}

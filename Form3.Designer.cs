@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp_0728
+﻿namespace WinFormsApp_new_0729
 {
     partial class Form3
     {
@@ -28,104 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            textBox1 = new TextBox();
+            components = new System.ComponentModel.Container();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            toolStripMenu_Color = new ToolStripMenuItem();
+            toolStripMenu_Font = new ToolStripMenuItem();
             button1 = new Button();
+            toolStripMenu_Front = new ToolStripMenuItem();
+            toolStripMenu_Back = new ToolStripMenuItem();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // contextMenuStrip1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 73);
-            label1.Name = "label1";
-            label1.Size = new Size(36, 15);
-            label1.TabIndex = 0;
-            label1.Text = "시/도";
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenu_Color, toolStripMenu_Font });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(181, 70);
             // 
-            // label2
+            // toolStripMenu_Color
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(158, 73);
-            label2.Name = "label2";
-            label2.Size = new Size(36, 15);
-            label2.TabIndex = 0;
-            label2.Text = "구/군";
+            toolStripMenu_Color.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenu_Front, toolStripMenu_Back });
+            toolStripMenu_Color.Name = "toolStripMenu_Color";
+            toolStripMenu_Color.Size = new Size(180, 22);
+            toolStripMenu_Color.Text = "Color";
             // 
-            // label3
+            // toolStripMenu_Font
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(304, 73);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 15);
-            label3.TabIndex = 0;
-            label3.Text = "도로명";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "서울특별시", "경기도", "충청남도" });
-            comboBox1.Location = new Point(54, 70);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(98, 23);
-            comboBox1.TabIndex = 1;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "강남구", "강동구", "강북구", "강서구", "관악구", "광진구" });
-            comboBox2.Location = new Point(200, 70);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(98, 23);
-            comboBox2.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(353, 73);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(131, 23);
-            textBox1.TabIndex = 2;
+            toolStripMenu_Font.Name = "toolStripMenu_Font";
+            toolStripMenu_Font.Size = new Size(180, 22);
+            toolStripMenu_Font.Text = "Font";
+            toolStripMenu_Font.Click += toolStripMenu_Font_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(490, 73);
+            button1.Location = new Point(189, 93);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "입력";
+            button1.Size = new Size(234, 137);
+            button1.TabIndex = 1;
+            button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            // 
+            // toolStripMenu_Front
+            // 
+            toolStripMenu_Front.Name = "toolStripMenu_Front";
+            toolStripMenu_Front.Size = new Size(180, 22);
+            toolStripMenu_Front.Text = "Front";
+            toolStripMenu_Front.Click += toolStripMenu_Front_Click;
+            // 
+            // toolStripMenu_Back
+            // 
+            toolStripMenu_Back.Name = "toolStripMenu_Back";
+            toolStripMenu_Back.Size = new Size(180, 22);
+            toolStripMenu_Back.Text = "Back";
+            toolStripMenu_Back.Click += toolStripMenu_Back_Click;
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(577, 368);
+            ClientSize = new Size(800, 450);
+            ContextMenuStrip = contextMenuStrip1;
             Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Cursor = Cursors.Arrow;
             Name = "Form3";
             Text = "Form3";
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private TextBox textBox1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem toolStripMenu_Color;
+        private ToolStripMenuItem toolStripMenu_Font;
         private Button button1;
+        private ToolStripMenuItem toolStripMenu_Front;
+        private ToolStripMenuItem toolStripMenu_Back;
     }
 }
