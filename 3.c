@@ -1,21 +1,27 @@
 #include <stdio.h>
-#define SIZE 5
+#include <math.h>
 
-int main() {
-	int i;
-	int scores[SIZE];
-	int sum = 0;
-	int mean;
+struct point {
+	int x;
+	int y;
+};
 
-	for (i = 0; i < SIZE; i++) {
-		printf("학생들의 성적을 입력하시오 : ");
-		scanf("%d", &scores[i]);
-	}
+int main(void) {
+	struct point p1, p2;
+	int xdiff, ydiff;
+	double dist;
 
-	for (i = 0; i < SIZE; i++) {
-		sum += scores[i];
-	}
-	mean = sum / SIZE;
-	printf("성적 평균 = %d\n", mean);
+	printf("점의 좌표를 입력하시오(x y) : ");
+	scanf("%d %d", &p1.x, &p1.y);
+
+	printf("점의 좌표를 입력하시오(x y) : ");
+	scanf("%d %d", &p2.x, &p2.y);
+
+	xdiff = p1.x - p2.x;
+	ydiff = p1.y - p2.y;
+
+	dist = sqrt((double)(xdiff * xdiff + ydiff * ydiff));
+
+	printf("두 점 사이의 거리는 %lf입니다.\n", dist);
 	return 0;
 }

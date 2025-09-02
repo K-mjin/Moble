@@ -1,36 +1,30 @@
 #include <stdio.h>
-#define ROWS 3
-#define COLS 3
+#include <stdlib.h>
 
 int main(void) {
-	int i, j;
-	int a[ROWS][COLS];
-	printf(" 3X3 행렬의 숫자를 입력하시오 : ");
-	for (i = 0; i < ROWS; i++) {
-		for (j = 0; j < COLS; j++) {
-			scanf("%d", &a[i][j]);
-		}
-	}
-	
-	int b[ROWS][COLS];
-	printf("3X3 행렬의 숫자를 입력하시오 : ");
-	for (i = 0; i < ROWS; i++) {
-		for (j = 0; j < COLS; j++) {
-			scanf("%d", &b[i][j]);
-		}
+	int* pi;
+	double* pf;
+	char* pc;
+
+	pi = (int*)malloc(sizeof(int));
+	pf = (double*)malloc(sizeof(double));
+	pc = (char*)malloc(sizeof(char));
+	if (pi == NULL || pf == NULL || pc == NULL) {
+		printf("동적 메모리 할당 오류\n");
+		exit(1);
 	}
 
-	int c[ROWS][COLS];
-	for (i = 0; i < ROWS; i++) {
-		for (j = 0; j < COLS; j++) {
-			c[i][j] = a[i][j] + b[i][j];
-		}
-	}
+	*pi = 100;
+	*pf = 3.14;
+	*pc = 'a';
 
-	for (i = 0; i < ROWS; i++) {
-		for (j = 0; j < COLS; j++)
-			printf("%d ", c[i][j]);
-		printf("\n");
-	}
+	printf("pi의 출력 = %d\n", *pi);
+	printf("pf의 출력 = %lf\n", *pf);
+	printf("pc의 출력 = %c\n", *pc);
+
+	free(pi);
+	free(pf);
+	free(pc);
+
 	return 0;
 }

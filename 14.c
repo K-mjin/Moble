@@ -1,14 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void) {
-	int i = 10;
-	int* p;
+	printf("정수 2개를 저장할 공간이 필요\n");
+	int* list = (int*)malloc(2 * sizeof(int));
+	int i;
+	int* list_new;
 
-	p = &i;
-	printf("i = %d\n", i);
+	list[0] = 10;
+	list[1] = 20;
+	printf("정수 3개를 저장할 공간으로 확장 \n");
 
-	*p = 20;
-	printf("i = %d\n", i);
+	list_new = (int*)realloc(list, 3 * sizeof(int));
+	list_new[2] = 30;
 
+	for (i = 0; i < 3; i++)
+		printf("%d ", list_new[i]);
+	printf("\n");
+	free(list_new);
 	return 0;
 }

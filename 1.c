@@ -1,17 +1,23 @@
 #include <stdio.h>
+struct student {
+	int number;
+	char name[10];
+	double grade;
+};
 
 int main() {
-	int i;
-	int scores[5];
+	struct  student s;
 
-	scores[0] = 10;
-	scores[1] = 20;
-	scores[2] = 30;
-	scores[3] = 40;
-	scores[4] = 50;
+	s.number = 20190001;
+	strcpy(s.name, "홀길동");
+	s.grade = 4.3;
 
-	for (i = 0; i < 5; i++) {
-		printf("scores[%d] = %d \n", i, scores[i]);
-	}
+	printf("학번 : %d\n", s.number);
+	printf("이름 : %s\n", s.name);
+	printf("학점 : %lf\n", s.grade);
+	printf("구조체의 사이즈 : %u\n", sizeof(s));
+	printf("학번 : %u\n", &s.number);
+	printf("이름 : %u\n", &s.name);
+	printf("학점 : %u\n", &s.grade);
 	return 0;
 }

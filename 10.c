@@ -1,22 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#define ROWS 3
-#define COLS 5
 
 int main(void) {
-	int s[ROWS][COLS];
-	int i, j;
-	srand((unsigned)time(NULL));
+	int* pi;
+	double* pf;
+	char* pc;
 
-	for (i = 0; i < ROWS; i++)
-		for (j = 0; j < COLS; j++)
-			s[i][j] = rand() % 100;
-
-	for (i = 0; i < ROWS; i++) {
-		for (j = 0; j < COLS; j++)
-			printf("% 02d", s[i][j]);
-		printf("\n");
+	pi = (int*)malloc(sizeof(int));
+	pf = (double*)malloc(sizeof(double));
+	pc = (char*)malloc(sizeof(char));
+	if (pi == NULL || pf == NULL || pc == NULL) {
+		printf("동적 메모리 할당 오류\n");
+		ecxit(1);
 	}
+	
+	*pi = 100;
+	*pf = 3.14;
+	*pc = 'a';
+
+	printf("pi의 출력 = %d\n", *pi);
+	printf("pf의 출력 = %d\n", *pf);
+	printf("pc의 출력 = %d\n", *pc);
+
+	free(pi);
+	free(pf);
+	free(pc);
+
 	return 0;
 }

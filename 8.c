@@ -1,22 +1,30 @@
 #include <stdio.h>
-#define SIZE 10
+
+struct simple {
+	int data1;
+	int data2;
+};
+
+void show(struct simple ts);
+void swap(struct simple* ps);
 
 int main(void) {
-	int list[SIZE] = { 3, 2, 9, 7, 1, 4, 8, 0, 6, 5 };
-	int i, j, temp, least;
+	struct simple s = { 1, 2 };
 
-	for (i = 0; i < SIZE-1; i++) {
-		least = i;
-		for (j = i + 1; j < SIZE; j++)
-			if (list[j] < list[least])
-				least = j;
-		temp = list[i];
-		list[i] = list[least];
-		list[least] = temp;
-	}
+	show(s);
+	swap(&s);
+	show(s);
 
-	for (i = 0; i < SIZE; i++)
-		printf("%d ", list[i]);
-	printf("\n");
 	return 0;
+}
+
+void show(struct simple ts) {
+	printf("data1 : %d, data2 : %d\n", ts.data1, ts.data2);
+}
+
+void swap(struct simple* ps) {
+	int temp;
+	temp = ps->data1;
+	ps->data1 = ps->data2;
+	ps->data2 = temp;
 }

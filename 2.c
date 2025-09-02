@@ -1,18 +1,25 @@
 #include <stdio.h>
-#include <time.h>
-#define SIZE 5
 
-int main() {
-	int scores[SIZE];
-	int i;
+struct student {
+	int number;
+	char name[10];
+	double grade;
+};
 
-	srand((unsigned)time(NULL));
-	for (i = 0; i < SIZE; i++) {
-		scores[i] = rand() % 100;
-	}
+int main(void) {
+	struct  student s;
 
-	for (i = 0; i < SIZE; i++) {
-		printf("scores[%d] = %d \n", i, scores[i]);
-	}
+	printf("학번을 입력하시오 : ");
+	scanf("%d", &s.number);
+
+	printf("이름을 입력하시오 : ");
+	scanf("%9s", s.name, 10);
+
+	printf("학점을 입력하시오(실수) : ");
+	scanf("%lf", &s.grade);
+
+	printf("학번 : %d\n", s.number);
+	printf("이름 : %s\n", s.name);
+	printf("학점 : %f\n", s.grade);
 	return 0;
 }

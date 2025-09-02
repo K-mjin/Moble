@@ -1,27 +1,29 @@
 #include <stdio.h>
-#define SIZE 7
-void square_array(int list[], int size);
-void print_array(int list[], int size);
+
+struct date
+{
+	int month;
+	int day;
+	int year;
+};
+
+struct student
+{
+	int number;
+	char name[20];
+	double grade;
+	struct  date* dob;
+};
 
 int main(void) {
-	int list[SIZE] = { 1, 2, 3, 4, 5, 6, 7 };
+	struct date d = { 3, 20, 1980 };
+	struct  student s = { 20190001, "kim", 4.3 };
 
-	print_array(list, SIZE);
-	square_array(list, SIZE);
-	print_array(list, SIZE);
-}
+	s.dob = &d;
 
-void square_array(int list[], int size) {
-	int i;
-
-	for (i = 0; i < size; i++)
-		list[i] = list[i] * list[i];
-}
-
-void print_array(int list[], int size) {
-	int i;
-
-	for (i = 0; i < size; i++)
-		printf("%3d", list[i]);
-	printf("\n");
+	printf("학번 : %d\n", s.number);
+	printf("이름 : %s\n", s.name);
+	printf("학점 : %lf\n", s.grade);
+	printf("생년월일 : %d년 %d월 %d일\n", s.dob->year, s.dob->month, s.dob->day);
+	return 0;
 }

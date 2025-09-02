@@ -1,21 +1,17 @@
 #include <stdio.h>
-#define STUDENTS 5
-int get_average(int scores[], int n);
+
+struct student{
+	int number;
+	char name[20];
+	double grade;
+};
 
 int main(void) {
-	int scores[STUDENTS] = { 1, 2, 3, 4, 5 };
-	int avg;
+	struct student s = { 24, "kim", 4.3 };
+	struct  student* p;
 
-	avg = get_average(scores, STUDENTS);
-	printf("평균은 %d입니다. \n", avg);
-	return 0;
-}
+	p = &s;
 
-int get_average(int scores[], int n) {
-	int i;
-	int sum=0;
-
-	for (i = 0; i < n; i++)
-		sum += scores[i];
-	return sum / n;
+	printf("학번 = %d 이름 = %s 학점 = %lf\n", s.number, s.name, s.grade);
+	printf("학번 = %d 이름 = %s 학점 = %lf\n", p->number, p->name, p->grade);
 }

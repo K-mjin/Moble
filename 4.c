@@ -1,19 +1,53 @@
 #include <stdio.h>
-#include <stdlib.h>
-#define SIZE 6
+
+struct point
+{
+	int x;
+	int y;
+};
+
+struct rect
+{
+	struct point p1;
+	struct point p2;
+};
 
 int main(void) {
-	int freq[SIZE] = { 0 };
-	int i;
+	struct rect r;
+	int w, h, area, peri;
 
-	for (i = 0; i < 1000; i++)
-		++freq[rand() % 6];
+	while (1) {
+		printf("왼쪽 상단의 좌표를 입력하시오 : ");
+		scanf("%d %d", &r.p1.x, &r.p1.y);
 
-	printf("=================\n");
-	printf("숫자       빈도          \n");
-	printf("=================\n");
+		printf("오른쪽 하단의 좌표를 입력하시오 : ");
+		scanf("%d %d", &r.p2.x, &r.p2.y);
 
-	for (i = 0; i < SIZE; i++)
-		printf("%3d       %3d \n", i+1, freq[i]);
+		w = r.p2.x - r.p1.x;
+		h = r.p1.y - r.p2.y;
+
+		if (r.p1.x == r.p2.x || r.p1.y == r.p2.y) {
+			printf("다시 입력하시오.\n");
+			continue;
+		}
+		/*else if (r.p1.x > r.p2.x || r.p1.y < r.p2.y) {
+			printf("좌표를 다시 확인하세요.\n");
+			continue;
+		}*/
+
+		if (w < 0)	
+		{
+			w = abs(w);
+		}
+		if (h < 0)
+		{
+			h = abs(h);
+		}
+
+		area = w * h;
+		peri = 2 * w + 2 * h;
+
+		printf("면적은 %d이고 둘레는 %d입니다.\n", area, peri);
+	}
 	return 0;
 }
